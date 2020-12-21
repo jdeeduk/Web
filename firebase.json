@@ -6,13 +6,17 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    // Dynamic Links will start with https://echophotos.io/invite
-    "appAssociation": "AUTO",
-    "rewrites": [
+    "headers": [
       {
-        "source": "/invite/**",
-        "dynamicLinks": true
+        "source": "/.well-known/apple-app-site-association",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
       }
-    ]
+    ],
+    "appAssociation": "NONE"
   }
 }
