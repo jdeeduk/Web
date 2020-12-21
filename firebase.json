@@ -5,6 +5,14 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    // Dynamic Links will start with https://echophotos.io/invite
+    "appAssociation": "AUTO",
+    "rewrites": [
+      {
+        "source": "/invite/**",
+        "dynamicLinks": true
+      }
     ]
   }
 }
