@@ -1,80 +1,294 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html class="no-js">
+
+<head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Echo Photos</title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.2.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.2.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.2.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.2.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.2.1/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.2.1/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.2.1/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.2.1/firebase-performance.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <!-- Fonts -->
+    <!-- Source Sans Pro -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400i|Source+Sans+Pro:300,400,600,700" rel="stylesheet"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet"> -->
+
+    <!-- CSS -->
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive Stylesheet -->
+</head>
+
+<body id="body">
+
+    <div id="preloader-wrapper">
+        <div class="pre-loader"></div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <!-- navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+                <a class="navbar-brand" href="#"><img src="images/logo.svg" width="125" height="50" alt=""></a>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto text-center text-lg-left">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#groups">Groups</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#requests">Requests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#download">Download</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- /navigation -->
+
+    <!-- hero area -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center mb-5 mb-md-0">
+                    <img src="images/iphone.png" alt="">
+                </div>
+                <div class="col-md-6 align-self-center text-center text-md-left">
+                    <div class="block">
+                        <h1 class="font-weight-bold mb-4 font-size-55">Simple. Forever. Supreme Photo Sharing</h1>
+                        <p class="mb-4">The prime solution for sharing photos: Create groups, add friends, upload high-res images and 
+                            write comments - make everlasting memories!</p>
+                        <a href="https://apps.apple.com/us/app/id1499073049"><img src="images/AppStore.svg" alt=""></a>
+                    </div>
+                </div>
+            </div><!-- .row close -->
+        </div><!-- .container close -->
+    </section><!-- header close -->
+
+
+    <!-- 
+        Feature start
+        ==================== -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="heading">
+                        <h2 id="features">Our Core Features</h2>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-40 text-center text-md-left">
+                        <h3 class="font-weight-bold mb-2">
+                            <ion-icon name="star"></ion-icon>
+                        </h3>
+                        <h4 class="font-weight-bold mb-2">High Resolution</h4>
+                        <p>It has never been easier to share high quality pictures with your friends.</p>
+                    </div>
+                    <div class="mb-40 text-center text-md-left">
+                        <h3 class="font-weight-bold mb-2">
+                            <ion-icon name="lock-closed"></ion-icon>
+                        </h3>
+                        <h4 class="font-weight-bold mb-2">Premium Privacy</h4>
+                        <p>No ads, no tracking and a secure storage: The advantages of an independent company benefit
+                            everyone.</p>
+                    </div>
+                    <div class="mb-40 text-center text-md-left">
+                        <h3 class="font-weight-bold mb-2">
+                            <ion-icon name="pricetag"></ion-icon>
+                        </h3>
+                        <h4 class="font-weight-bold mb-2">Easy Pricing</h4>
+                        <p>No subscriptions, no storage limits: Premium features are paid once and kept forever.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center align-self-center mb-4 mb-md-0">
+                    <img class="img-fluid" src="images/iphone.png" alt="">
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-40 text-center text-md-left">
+                        <h3 class="font-weight-bold mb-2">
+                            <ion-icon name="radio"></ion-icon>
+                        </h3>
+                        <h4 class="font-weight-bold mb-2">Photo Requests</h4>
+                        <p>Request amazing pictures from strangers. They can take the perfect picture of you that you would never have imagined.</p>
+                    </div>
+                    <div class="mb-40 text-center text-md-left">
+                        <h3 class="font-weight-bold mb-2">
+                            <ion-icon name="eye"></ion-icon>
+                        </h3>
+                        <h4 class="font-weight-bold mb-2">Sharp Design</h4>
+                        <p>A carefully crafted app. Simple and yet feature rich, it lets you focus on what 
+                          you want to do.</p>
+                    </div>
+                    <div class="mb-40 text-center text-md-left">
+                        <h3 class="font-weight-bold mb-2">
+                            <ion-icon name="people"></ion-icon>
+                        </h3>
+                        <h4 class="font-weight-bold mb-2">Social Sharing</h4>
+                        <p>Comments and likes for you group images: Echo provides a private social network experience.
+                            For real friends only.</p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .container close -->
+    </section><!-- #service close -->
+
+    <section class="bg-orange section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center mb-5 mb-lg-0">
+                    <img class="img-fluid" src="images/iphone.png" alt="">
+                </div>
+                <div class="col-md-6 align-self-center text-center text-md-left">
+                    <div class="content">
+                      
+                        <h3 class="text-white"><ion-icon name="lock-closed"></ion-icon> Premium Privacy</h3>
+                        <h2 class="subheading text-white font-weight-bold mb-10">Say no to Tracking!</h2>
+                        <p class="text-white">Echo Photos does not monetize your private data.
+                            We do not track user data for ads or to sell them. For us, you are our customer -
+                            you deserve our best service!</p>
+                        <p class="text-white">Your memories are in a safe place. Using the highest security standards, 
+                          we keep up with the newest safety features.</p>
+                        <p class="text-white">Our servers run with cutting-edge security features - we do not put anything at risk.</p>
+                        <p class="text-white">Privacy is our top concern. All you data is securely stored in Switzerland 🇨🇭. 
+                          One should never worry about the protection of your pictures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="feature-list section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <h2 id="groups">Group Sharing</h2>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mb-40">
+                <div class="col-md-6 text-center mb-5 mb-lg-0">
+                    <img class="img-fluid" src="images/iphone.png" alt="">
+                </div>
+                <div class="col-md-6 align-self-center text-center text-md-left">
+                    <div class="content">
+                        <h4 class="subheading">Share Photos - Keep Forever</h4>
+                        <p>With Echo Photos, you'll get fast, simple and eternal photo sharing. No subscription needed!</p>
+                        <p>Echo Photos is the best way to share pictures of a memorable day with your friends.</p>
+                        <p>Safely store your pictures with Echo Photos' eternal storage.</p>
+                        <p>Like and comment your friends pictures in your groups.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 order-md-1 order-2 align-self-center text-center text-md-left">
+                    <div class="content">
+                        <h4 class="subheading">Premium Photos for unforgettable Events</h4>
+                        <p>Share pictures with hundreds of guests of events like: weddings, parties and other festivities. 🥳</p>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-2 order-1 text-center mb-5 mb-lg-0">
+                    <img class="img-fluid" src="images/iphone.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-list section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <h2 id="requests">Photo Echo</h2>
+                        <p>Request and receive photo of yourself - just like an echo, but as a photo!</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mb-40">
+                <div class="col-md-6 text-center mb-5 mb-lg-0">
+                    <img class="img-fluid" src="images/iphone.png" alt="">
+                </div>
+                <div class="col-md-6 align-self-center text-center text-md-left">
+                    <div class="content">
+                        <h4 class="subheading">Request a picture</h4>
+                        <p>By sharing your live location, anyone using Echo that is nearby will be able to take the
+                            perfect shot of you. Whether you are hiking in the mountains or sailing on the ocean - get pictures
+                            you would have never gotten without the Echo Photos app!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 order-md-1 order-2 align-self-center text-center text-md-left">
+                    <div class="content">
+                        <h4 class="subheading">Respond to a Request</h4>
+                        <p>Easily take pictures of strangers who are nearby. See all requests in Echo Photos, where the AR
+                            camera makes sure that you will get the perfect shot.</p>
+                        <a href="#" class="btn btn-main btn-main-sm">Check Features</a>
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-2 order-1 text-center mb-5 mb-lg-0">
+                    <img class="img-fluid" src="images/iphone.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <a href="#" class="footer-logo mb-4">Echo Photos</a>
+                        <ul class="list-inline footer-menu">
+                            <li class="list-inline-item">
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#groups">Groups</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="http://instagram.com/echophotos.io">Instagram</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#download">Download</a>
+                            </li>
+                        </ul>
+                        <p class="copyright-text">Copyright &copy; <a href="http://www.echolabs.ch"> Echo Labs AG</a> |
+                            All right reserved.</p>
+                        <a class="footer-logo mb-4">Coded with ❤️ in 🇨🇭</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Js -->
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="plugins/jquery-2.1.1.min.js"></script>
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
 </html>
