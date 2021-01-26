@@ -1,4 +1,4 @@
-Data Protection Policy samsaidyes.com by Echo Labs
+Data Protection Policy echophotos.io by Echo Labs
 For the US Data Protection Policy click here.
 This Data Protection Policy describes the collection and further processing of personal data by Echo Labs AG, Rankstrasse 22, 8703 Erlenbach, Switzerland (hereinafter "Echo Labs").
 Echo Labs attaches great importance to the protection of personal data and collects, processes and uses personal data solely for providing and improving its products and services and in accordance with the principles described below and in compliance with the applicable data protection provisions. Personal data is all information relating to an identified or identifiable natural person, which includes, for example, the User's name as well as its postal and email addresses.
@@ -7,7 +7,7 @@ This Data Protection Policy describes the general processing of personal data by
 If the user provides personal data of other persons (i.e. data about invited persons to an event) to Echo Labs, he should only provide their personal data if he is entitled to disclose such data in compliance with the applicable data protection regulations and only if the affected person agrees to said disclosure according to this data protection policy.
 A General Provisions
 1 Data Controller, Data Protection Officer
-The Data Controller in accordance with the Swiss Data Protection Regulations and the EU General Data Protection Regulation (GDPR) of every website (including samsaidyes.com and other sites or mini sites for special offers), Smart device Application, presence on social media, multimedia portals, chatbots and any other consumer touchpoint whatsoever of Echo Labs (hereinafter each "Website") shall be Echo Labs AG, Rankstrasse 22, 8703 Erlenbach, Switzerland.
+The Data Controller in accordance with the Swiss Data Protection Regulations and the EU General Data Protection Regulation (GDPR) of every website (including echophotos.io and other sites or mini sites for special offers), Smart device Application, presence on social media, multimedia portals, chatbots and any other consumer touchpoint whatsoever of Echo Labs (hereinafter each "Website") shall be Echo Labs AG, Rankstrasse 22, 8703 Erlenbach, Switzerland.
 Echo Labs has not appointed a data protection officer according to article 37 GDPR.
 2 Processing of personal data
 Echo Labs collects and processes personal data of
@@ -116,14 +116,14 @@ Echo Labs AG
 Data Protection
 8703 Erlenbach
 Switzerland
-hello@samsaidyes.com
+hello@echophotos.io
 Echo Labs reserves the right to restrict the rights of the affected individual in accordance with applicable law and e.g. not to disclose comprehensive information or not to delete data.
 In the event that Echo Labs makes an automated decision with respect to a certain individual which may have a legal effect for the affected individual or seriously affect him or her in a similar way, the affected individual shall have, in accordance with applicable law, the right to communicate with Echo Labs and to request a reconsideration of the decision or to request the prior evaluation by Echo Labs. In such case, the affected individual may no longer be able to use certain automated products and services. The individual will be informed thereof subsequently or separately in advance.
 Any affected individual may also raise a complaint with the competent data protection authority, which in the case of a Echo Labs is the Federal Data Protection and Information Commissioner in Switzerland (http://www.edoeb.admin.ch) or the respective data protection authority in the user's country of residence.
 9 Reporting a privacy violation.
-Every day, thousands of people share pictures and engage with one another through the Websites. Echo Labs encourages any User to report if media or comments on the site violate the User's privacy or sense of safety. If media contains the User's personal information without consent, including any image, Echo Labs may be contacted at any time through hello@samsaidyes.com
+Every day, thousands of people share pictures and engage with one another through the Websites. Echo Labs encourages any User to report if media or comments on the site violate the User's privacy or sense of safety. If media contains the User's personal information without consent, including any image, Echo Labs may be contacted at any time through hello@echophotos.io
 ## 10 Children’s Policy
-The Websites are made for general audiences and are not directed to minors under the age of 16. If a User is under the age of 16, the use of the Website is prohibited. If Echo Labs learns to have collected personal information from a minor of the age under 16, Echo Labs is obligated to and will delete any and all information and data as quickly as possible. If anyone believes that Echo Labs might have any information or data from a minor under the age of 16, Echo Labs shall be contacted via hello@samsaidyes.com.
+The Websites are made for general audiences and are not directed to minors under the age of 16. If a User is under the age of 16, the use of the Website is prohibited. If Echo Labs learns to have collected personal information from a minor of the age under 16, Echo Labs is obligated to and will delete any and all information and data as quickly as possible. If anyone believes that Echo Labs might have any information or data from a minor under the age of 16, Echo Labs shall be contacted via hello@echophotos.io.
 ## 11 Changes to this Data Protection Policy
 Echo Labs reserves the right to amend this Data Privacy Notice at any time and without prior notice or announcement. The latest version posted on the Echo Labs Website shall be applicable.
 Echo Labs shall inform the affected person of any update or amendments by email or in another appropriate manner.
