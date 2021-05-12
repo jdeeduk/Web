@@ -6,6 +6,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/invite/**",
+        "destination": "/join-group",
+        "type": 301
+      }
+    ],
     "headers": [
       {
         "source": "/.well-known/apple-app-site-association",
