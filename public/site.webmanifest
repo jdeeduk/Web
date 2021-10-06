@@ -1,6 +1,6 @@
 {
-  "name": "Echo Photos",
-  "short_name": "Echo",
+  "name": "Echo Photos: The smart way to share your photos",
+  "short_name": "Echo Photos",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
