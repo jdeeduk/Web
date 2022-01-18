@@ -115,6 +115,20 @@
     <script src="../plugins/bootstrap/bootstrap.min.js"></script>
     <script src="../js/main.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            if (navigator.userAgent.toLowerCase().indexOf("android") > -1) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=ch.echolabs.echo';
+            }
+            if (navigator.userAgent.toLowerCase().indexOf("iphone") > -1) {
+                window.location.href = 'https://apps.apple.com/us/app/id1499073049';
+            }
+            if (navigator.userAgent.toLowerCase().indexOf("macintosh") > -1) {
+                window.location.href = 'https://apps.apple.com/us/app/id1499073049';
+            }
+        });
+    </script>
+
 </body>
 
 </html>
