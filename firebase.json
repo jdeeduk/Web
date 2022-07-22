@@ -25,5 +25,10 @@
       }
     ],
     "appAssociation": "NONE"
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5001
+    }
   }
 }
