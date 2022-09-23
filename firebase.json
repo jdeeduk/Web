@@ -6,11 +6,10 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "redirects": [
+    "rewrites": [
       {
         "source": "/invite/**",
-        "destination": "/join-group",
-        "type": 301
+        "destination": "/join-group/index.html"
       }
     ],
     "headers": [
