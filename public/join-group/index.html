@@ -61,7 +61,10 @@
                 <div class="col-md-6 align-self-center text-center text-md-left">
                     <div class="block">
                         <h1 class="font-weight-bold mb-4 font-size-55">Open on Echo Photos</h1>
-                        <p class="mb-4">The invite link you are trying to open can be opened with the Echo Photos App</p>
+                        <p class="mb-4">The invite link you are trying to open can be opened with the Echo Photos App.</p>
+                        <p class="mb-4" id="inviteCode"></p>
+                        <button onclick="copyToClipboard()">Copy</button>
+
                         <a href="https://apps.apple.com/us/app/id1499073049">
                             <img src="/images/AppStore.svg" height="40" alt="Get Echo from the App Store">
                         </a>
@@ -133,6 +136,33 @@
             }
         });
     </script> -->
+    <script>
+        var path = window.location.pathname;
+        if (!path.startsWith("/invite/")) {
+            return;
+        }
+        var inviteId = path.substring(8, 44);
+        var inviteCode = path.substring(8, 16);
+
+        document.getElementById("inviteCode").innerHTML =
+            "Copy code <br>" + inviteCode;
+
+    </script>
+    <script>
+        function copyToClipboard() {
+                var path = window.location.pathname;
+                if (!path.startsWith("/invite/")) {
+                    return;
+                }
+                var inviteId = path.substring(8, 44);
+                var inviteCode = path.substring(8, 16);
+                // Copy the text inside the text field
+                navigator.clipboard.writeText(inviteCode);
+
+                // Alert the copied text
+                alert("Copied invite code to your clipboard: " + inviteCode);
+            }
+    </script>
 
 </body>
 
