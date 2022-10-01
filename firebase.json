@@ -10,6 +10,10 @@
       {
         "source": "/invite/**",
         "destination": "/join-group/index.html"
+      },
+      {
+        "source": "/api/invite",
+        "function": "getInviteData"
       }
     ],
     "headers": [
