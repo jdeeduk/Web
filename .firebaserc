@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "echo-photos"
+    "default": "echo-photos",
+    "beta": "echo-photos-beta",
+    "dev": "echo-photos-dev"
   }
 }
