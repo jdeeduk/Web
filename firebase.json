@@ -13,7 +13,13 @@
       },
       {
         "source": "/api/invite",
-        "function": "getInviteData"
+        "function": "getInviteData",
+        "region": "europe-west6"
+      },
+      {
+        "source": "/api/image-preview",
+        "function": "imagePreview",
+        "region": "europe-west6"
       }
     ],
     "headers": [

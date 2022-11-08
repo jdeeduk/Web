@@ -19,17 +19,13 @@ function getCurrentInviteId() {
     return inviteId;
 }
 
-function getCurrentInviteCode() {
-    var inviteId = getCurrentInviteId();
-    var inviteCode = inviteId.substring(0, 8);
-    return inviteCode;
+async function getInvite(id) {
+    const response = await fetch(`../api/invite?id=${id}`);
+    return response.json();
 }
 
-function getInvite(id) {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "/getInviteData?id=${id}", false); // false for synchronous request
-    xmlHttp.send(null);
-    return xmlHttp.responseText;
+function getPreviewImage(id) {
+    return `${window.location.origin}/api/image-preview?id=${id}`;
 }
 
 function setQRCode() {
@@ -41,9 +37,25 @@ function setQRCode() {
     new QRCode(document.getElementById("qrcode"), window.location.href);
 }
 
-function update() {
+async function update() {
     setQRCode();
-    document.getElementById("inviteCode").innerHTML = getCurrentInviteCode();
+
+    var inviteId = getCurrentInviteId();
+    var inviteCode = inviteId.substring(0, 8);
+    document.getElementById("inviteCode").innerHTML = inviteCode;
+    const invite = await getInvite(inviteId);
+    setMetaTagsForInviteLink(invite);
+}
+
+async function setMetaTagsForInviteLink(invite) {
+    const albumImage = invite.groupImage;
+    if (albumImage !== undefined) {
+        const imageURL = getPreviewImage(albumImage);
+        document.querySelector('meta[property="og:image"]').setAttribute('content', imageURL);
+    }
+    document.querySelector('meta[property="og:title"]').setAttribute('content', invite.groupName);
+    document.querySelector('meta[property="og:type"]').setAttribute('content', "website");
+    // document.querySelector('meta[property="og:url"]').setAttribute('content', "https://www.echophotos.io/invite/");
 }
 
 update();
