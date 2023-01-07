@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "source": ".",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -8,18 +8,14 @@
     ],
     "rewrites": [
       {
-        "source": "/invite/**",
-        "destination": "/join-group/index.html"
-      },
-      {
         "source": "/api/invite",
         "function": "getInviteData",
-        "region": "europe-west6"
+        "region": "us-central1"
       },
       {
         "source": "/api/image-preview",
         "function": "imagePreview",
-        "region": "europe-west6"
+        "region": "us-central1"
       }
     ],
     "headers": [
@@ -31,13 +27,26 @@
             "value": "application/json"
           }
         ]
+      },
+      {
+        "source": "/api/invite",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
+      },
+      {
+        "source": "/api/image-preview",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ]
       }
     ],
     "appAssociation": "NONE"
-  },
-  "emulators": {
-    "hosting": {
-      "port": 5001
-    }
   }
 }

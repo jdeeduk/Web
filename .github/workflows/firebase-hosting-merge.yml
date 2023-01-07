@@ -17,5 +17,3 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ECHO_PHOTOS }}'
           channelId: live
           projectId: echo-photos
-        env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels
