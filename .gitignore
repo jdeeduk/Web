@@ -107,3 +107,5 @@ next-env.d.ts
 .env
 
 .firebase
+
+.vscode
