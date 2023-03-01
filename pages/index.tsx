@@ -48,7 +48,7 @@ export default function Home() {
               </div>
             </div>
             <div className="col-md-4">
-              <div className="mb-40 text-center text-md-left">
+              <div className="mb-10 text-center text-md-left">
                 <h3 className="font-weight-bold mb-2">
                   <img src="images/icons/photo.on.rectangle.svg" height="40" />
                 </h3>
@@ -57,7 +57,7 @@ export default function Home() {
                   Share your photos in full resolution in its original quality.
                 </p>
               </div>
-              <div className="mb-40 text-center text-md-left">
+              <div className="mb-10 text-center text-md-left">
                 <h3 className="font-weight-bold mb-2">
                   <img src="images/icons/lock.fill.svg" height="40" />
                 </h3>
@@ -67,7 +67,7 @@ export default function Home() {
                   independent company benefit everyone.
                 </p>
               </div>
-              <div className="mb-40 text-center text-md-left">
+              <div className="mb-10 text-center text-md-left">
                 <h3 className="font-weight-bold mb-2">
                   <img src="images/icons/star.fill.svg" height="40" />
                 </h3>
@@ -85,7 +85,7 @@ export default function Home() {
               <img className="img-fluid" src="images/iphone.png" alt="" />
             </div>
             <div className="col-md-4">
-              <div className="mb-40 text-center text-md-left">
+              <div className="mb-10 text-center text-md-left">
                 <h3 className="font-weight-bold mb-2">
                   <img
                     src="images/icons/dot.radiowaves.left.and.right.svg"
@@ -101,7 +101,7 @@ export default function Home() {
                   accidentially download your photos again!
                 </p>
               </div>
-              <div className="mb-40 text-center text-md-left">
+              <div className="mb-10 text-center text-md-left">
                 <h3 className="font-weight-bold mb-2">
                   <img src="images/icons/checkmark.seal.fill.svg" height="40" />
                 </h3>
@@ -111,7 +111,7 @@ export default function Home() {
                   you focus on what you want to do.
                 </p>
               </div>
-              <div className="mb-40 text-center text-md-left">
+              <div className="mb-10 text-center text-md-left">
                 <h3 className="font-weight-bold mb-2">
                   <img src="images/icons/person.2.fill.svg" height="40" />
                 </h3>
@@ -126,7 +126,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-dark section">
+      <section className="bg-zinc-800 section">
         <div className="container">
           <div className="row">
             <div className="col-md-6 text-center mb-5 mb-lg-0">
@@ -135,7 +135,7 @@ export default function Home() {
             <div className="col-md-6 align-self-center text-center text-md-left">
               <div className="content">
                 <h3 className="text-white">Say no to Tracking!</h3>
-                <h2 className="subheading text-white font-weight-bold mb-10">
+                <h2 className="subheading text-white font-weight-bold mb-2.5">
                   Premium Privacy{' '}
                   <img src="images/icons/lock.fill.white.svg" height="60" />
                 </h2>
@@ -171,7 +171,7 @@ export default function Home() {
                 <h3 style={{ color: 'green' }}>Care for the Climate</h3>
                 <h2
                   style={{ color: 'green' }}
-                  className="subheading font-weight-bold mb-10"
+                  className="subheading font-weight-bold mb-2.5"
                 >
                   <img src="images/icons/leaf.fill.svg" height="60" />
                   Carbon Neutral
@@ -202,7 +202,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="row mb-40">
+          <div className="row mb-10">
             <div className="col-md-6 text-center mb-5 mb-lg-0">
               <img className="img-fluid" src="images/group.png" alt="" />
             </div>
@@ -257,7 +257,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="row mb-40">
+          <div className="row mb-10">
             <div className="col-md-6 text-center mb-5 mb-lg-0">
               <img className="img-fluid" src="images/browser.jpg" alt="" />
             </div>
