@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <section className="section">
+      <section>
         <div className="container">
           <div className="row">
             <div className="col-md-6 text-center mb-5 mb-md-0">
@@ -39,7 +39,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="features" className="section">
+      <section id="features">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -163,7 +163,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section>
         <div className="container">
           <div className="row">
             <div className="col-md-6 align-self-center text-center text-md-right">
