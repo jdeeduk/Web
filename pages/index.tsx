@@ -14,7 +14,7 @@ export default function Home() {
           </div>
 
           <div className="w-1/2 flex flex-wrap">
-            <h1 className="font-bold text-5xl mb-6">
+            <h1 className="font-bold mb-6">
               Full-Res. Simple. Supreme Photo Albums
             </h1>
 
@@ -47,88 +47,85 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="features">
-        <div className={styles.sectionContainer}>
-          <div className="row">
-            <div className="col-12">
-              <div className="heading">
-                <h2>Unlimited Memories</h2>
-              </div>
+      <section id="features" className="mt-48">
+        <div
+          className={`flex flex-col items-center ${styles.sectionContainer}`}
+        >
+          <h2 className="font-bold mb-6">Unlimited Memories</h2>
+
+          <div className="grid grid-rows-3 grid-cols-3 grid-flow-col">
+            <div className="mb-10 text-center text-md-left">
+              <h3 className="font-weight-bold mb-2">
+                <img src="images/icons/photo.on.rectangle.svg" height="40" />
+              </h3>
+              <h4 className="font-weight-bold mb-2">Full Resolution</h4>
+              <p>
+                Share your photos in full resolution in its original quality.
+              </p>
             </div>
-            <div className="col-md-4">
-              <div className="mb-10 text-center text-md-left">
-                <h3 className="font-weight-bold mb-2">
-                  <img src="images/icons/photo.on.rectangle.svg" height="40" />
-                </h3>
-                <h4 className="font-weight-bold mb-2">Full Resolution</h4>
-                <p>
-                  Share your photos in full resolution in its original quality.
-                </p>
-              </div>
-              <div className="mb-10 text-center text-md-left">
-                <h3 className="font-weight-bold mb-2">
-                  <img src="images/icons/lock.fill.svg" height="40" />
-                </h3>
-                <h4 className="font-weight-bold mb-2">Premium Privacy</h4>
-                <p>
-                  No ads, no tracking and secure storage: The advantages of an
-                  independent company benefit everyone.
-                </p>
-              </div>
-              <div className="mb-10 text-center text-md-left">
-                <h3 className="font-weight-bold mb-2">
-                  <img src="images/icons/star.fill.svg" height="40" />
-                </h3>
-                <h4 className="font-weight-bold mb-2">
-                  Free for the First Year
-                </h4>
-                <p>
-                  No subscriptions, no storage limits: Premium features are paid
-                  once and kept forever. During the first year of usage, all
-                  albums are premium for free!
-                </p>
-              </div>
+
+            <div className="mb-10 text-center text-md-left">
+              <h3 className="font-weight-bold mb-2">
+                <img src="images/icons/lock.fill.svg" height="40" />
+              </h3>
+              <h4 className="font-weight-bold mb-2">Premium Privacy</h4>
+              <p>
+                No ads, no tracking and secure storage: The advantages of an
+                independent company benefit everyone.
+              </p>
             </div>
-            <div className="col-md-4 text-center align-self-center mb-4 mb-md-0">
+
+            <div className="mb-10 text-center text-md-left">
+              <h3 className="font-weight-bold mb-2">
+                <img src="images/icons/star.fill.svg" height="40" />
+              </h3>
+              <h4 className="font-weight-bold mb-2">Free for the First Year</h4>
+              <p>
+                No subscriptions, no storage limits: Premium features are paid
+                once and kept forever. During the first year of usage, all
+                albums are premium for free!
+              </p>
+            </div>
+
+            <div className="row-span-3">
               <img className="img-fluid" src="images/iphone.png" alt="" />
             </div>
-            <div className="col-md-4">
-              <div className="mb-10 text-center text-md-left">
-                <h3 className="font-weight-bold mb-2">
-                  <img
-                    src="images/icons/dot.radiowaves.left.and.right.svg"
-                    height="40"
-                  />
-                </h3>
-                <h4 className="font-weight-bold mb-2">
-                  AirDrop, but for Groups
-                </h4>
-                <p>
-                  Apart from Android support, Echo Photos has many advantages
-                  compared to AirDrop. With smart download tools, do never
-                  accidentially download your photos again!
-                </p>
-              </div>
-              <div className="mb-10 text-center text-md-left">
-                <h3 className="font-weight-bold mb-2">
-                  <img src="images/icons/checkmark.seal.fill.svg" height="40" />
-                </h3>
-                <h4 className="font-weight-bold mb-2">Refined Design</h4>
-                <p>
-                  A carefully crafted app: Simple and yet feature-rich, letting
-                  you focus on what you want to do.
-                </p>
-              </div>
-              <div className="mb-10 text-center text-md-left">
-                <h3 className="font-weight-bold mb-2">
-                  <img src="images/icons/person.2.fill.svg" height="40" />
-                </h3>
-                <h4 className="font-weight-bold mb-2">Social Sharing</h4>
-                <p>
-                  Comments and likes for your group images: Echo provides a
-                  private social network experience. For real friends only.
-                </p>
-              </div>
+
+            <div className="mb-10 text-center text-md-left">
+              <h3 className="font-weight-bold mb-2">
+                <img
+                  src="images/icons/dot.radiowaves.left.and.right.svg"
+                  height="40"
+                />
+              </h3>
+              <h4 className="font-weight-bold mb-2">AirDrop, but for Groups</h4>
+              <p>
+                Apart from Android support, Echo Photos has many advantages
+                compared to AirDrop. With smart download tools, do never
+                accidentially download your photos again!
+              </p>
+            </div>
+
+            <div className="mb-10 text-center text-md-left">
+              <h3 className="font-weight-bold mb-2">
+                <img src="images/icons/checkmark.seal.fill.svg" height="40" />
+              </h3>
+              <h4 className="font-weight-bold mb-2">Refined Design</h4>
+              <p>
+                A carefully crafted app: Simple and yet feature-rich, letting
+                you focus on what you want to do.
+              </p>
+            </div>
+
+            <div className="mb-10 text-center text-md-left">
+              <h3 className="font-weight-bold mb-2">
+                <img src="images/icons/person.2.fill.svg" height="40" />
+              </h3>
+              <h4 className="font-weight-bold mb-2">Social Sharing</h4>
+              <p>
+                Comments and likes for your group images: Echo provides a
+                private social network experience. For real friends only.
+              </p>
             </div>
           </div>
         </div>
