@@ -1,0 +1,5 @@
+.sectionContainer {
+  @apply m-auto;
+  @apply container;
+  @apply max-w-6xl;
+}

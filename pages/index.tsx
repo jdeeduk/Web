@@ -1,46 +1,54 @@
+import Image from 'next/image';
 import Link from 'next/link';
+import styles from './Home.module.css';
 
 export default function Home() {
   return (
     <>
-      <section>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6 text-center mb-5 mb-md-0">
-              <img src="images/title.png" alt="" width="300" />
-            </div>
-            <div className="col-md-6 align-self-center text-center text-md-left">
-              <div className="block">
-                <h1 className="font-weight-bold mb-4 font-size-55">
-                  Full-Res. Simple. Supreme Photo Albums
-                </h1>
-                <p className="mb-4">
-                  The prime solution for sharing photos: Create albums, add
-                  friends, upload full-resolution images and write comments -
-                  make everlasting memories!
-                </p>
-                <Link href="https://apps.apple.com/us/app/id1499073049">
-                  <img
-                    src="images/AppStore.svg"
-                    height="40"
-                    alt="Get Echo from the App Store"
-                  />
-                </Link>
-                <Link href="https://play.google.com/store/apps/details?id=ch.echolabs.echo">
-                  <img
-                    height={60}
-                    alt="Get it on Google Play"
-                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                  />
-                </Link>
-              </div>
+      <section className="mt-5">
+        <div
+          className={`flex justify-center items-center ${styles.sectionContainer}`}
+        >
+          <div className="w-1/2 flex justify-center items-center">
+            <img src="images/title.png" alt="" width="300" />
+          </div>
+
+          <div className="w-1/2 flex flex-wrap">
+            <h1 className="font-bold text-5xl mb-6">
+              Full-Res. Simple. Supreme Photo Albums
+            </h1>
+
+            <p className="mb-6">
+              The prime solution for sharing photos: Create albums, add friends,
+              upload full-resolution images and write comments - make
+              everlasting memories!
+            </p>
+
+            <div className="flex items-center">
+              <Link href="https://apps.apple.com/us/app/id1499073049">
+                <Image
+                  src="images/AppStore.svg"
+                  height="40"
+                  width="120"
+                  alt="Get Echo from the App Store"
+                />
+              </Link>
+
+              <Link href="https://play.google.com/store/apps/details?id=ch.echolabs.echo">
+                <Image
+                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                  height="60"
+                  width="155"
+                  alt="Get Echo on Google Play"
+                />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       <section id="features">
-        <div className="container">
+        <div className={styles.sectionContainer}>
           <div className="row">
             <div className="col-12">
               <div className="heading">
@@ -126,8 +134,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-zinc-800 section">
-        <div className="container">
+      <section className="bg-zinc-800">
+        <div className={styles.sectionContainer}>
           <div className="row">
             <div className="col-md-6 text-center mb-5 mb-lg-0">
               <img className="img-fluid" src="images/groups.png" alt="" />
@@ -164,7 +172,7 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="container">
+        <div className={styles.sectionContainer}>
           <div className="row">
             <div className="col-md-6 align-self-center text-center text-md-right">
               <div className="content">
@@ -193,8 +201,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="albums" className="feature-list section">
-        <div className="container">
+      <section id="albums">
+        <div className={styles.sectionContainer}>
           <div className="row">
             <div className="col-md-12">
               <div className="heading">
@@ -243,8 +251,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="desktop" className="feature-list section">
-        <div className="container">
+      <section id="desktop">
+        <div className={styles.sectionContainer}>
           <div className="row">
             <div className="col-md-12">
               <div className="heading">
