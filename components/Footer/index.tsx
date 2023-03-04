@@ -64,7 +64,11 @@ export default function Footer() {
 
         <p className="text-neutral-500 font-light text-xs leading-5 mt-6 mb-8">
           Copyright &copy;{' '}
-          <Link href="http://www.echolabs.ch" className="text-neutral-800">
+          <Link
+            href="http://www.echolabs.ch"
+            target="_blank"
+            className="text-neutral-800"
+          >
             {' '}
             Echo Labs AG
           </Link>{' '}

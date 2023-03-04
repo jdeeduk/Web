@@ -38,7 +38,10 @@ export default function Home() {
             </p>
 
             <div className="flex items-center">
-              <Link href="https://apps.apple.com/us/app/id1499073049">
+              <Link
+                href="https://apps.apple.com/us/app/id1499073049"
+                target="_blank"
+              >
                 <img
                   src="images/AppStore.svg"
                   height="40"
@@ -47,7 +50,10 @@ export default function Home() {
                 />
               </Link>
 
-              <Link href="https://play.google.com/store/apps/details?id=ch.echolabs.echo">
+              <Link
+                href="https://play.google.com/store/apps/details?id=ch.echolabs.echo"
+                target="_blank"
+              >
                 <img
                   src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                   height="60"
@@ -271,7 +277,10 @@ export default function Home() {
                 only possible this way.
               </p>
 
-              <Link href="https://apps.apple.com/us/app/id1499073049">
+              <Link
+                href="https://apps.apple.com/us/app/id1499073049"
+                target="_blank"
+              >
                 <img
                   src="images/MacAppStore.svg"
                   height="40"
