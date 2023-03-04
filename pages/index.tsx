@@ -1,6 +1,7 @@
 import {
   IconAccessPoint,
   IconDiscountCheckFilled,
+  IconLeaf,
   IconLock,
   IconPhotoUp,
   IconStarFilled,
@@ -145,32 +146,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
-        <div className={styles.sectionContainer}>
-          <div className="row">
-            <div className="col-md-6 align-self-center text-center text-md-right">
-              <div className="content">
-                <h3 style={{ color: 'green' }}>Care for the Climate</h3>
-                <h2
-                  style={{ color: 'green' }}
-                  className="subheading font-weight-bold mb-2.5"
-                >
-                  <img src="images/icons/leaf.fill.svg" height="60" />
-                  Carbon Neutral
-                </h2>
-                <p>Our servers run entirely carbon-neutral.</p>
-                <p>
-                  Plus, we are committed to be completely carbon-free by 2030.
-                </p>
-              </div>
-            </div>
-            <div className="col-md-6 text-center mb-5 mb-lg-0">
-              <img
-                className="img-fluid"
-                src="https://source.unsplash.com/eluzJSfkNCk/400x600"
-                alt=""
-              />
-            </div>
+      <section className="py-24">
+        <div className={`${styles.sectionContainer} flex`}>
+          <div className="w-1/2 text-right my-auto">
+            <h3 className="text-green-700">Care for the Climate</h3>
+
+            <h2 className="font-bold mb-2.5 flex items-center gap-2 text-green-700 justify-end">
+              <IconLeaf className="-scale-x-100" size={32} />
+              Carbon Neutral
+            </h2>
+
+            <p className="my-1">Our servers run entirely carbon-neutral.</p>
+
+            <p className="my-1">
+              Plus, we are committed to be completely carbon-free by 2030.
+            </p>
+          </div>
+
+          <div className="w-1/2 flex justify-center items-center">
+            <img
+              className=""
+              src="https://source.unsplash.com/eluzJSfkNCk/400x600"
+              alt=""
+            />
           </div>
         </div>
       </section>
