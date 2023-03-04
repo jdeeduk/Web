@@ -51,7 +51,7 @@ export default () => {
             </li>
 
             <li>
-              <Link className={styles.navLink} href="/#download">
+              <Link className={styles.navLink} href="/">
                 Download
               </Link>
             </li>

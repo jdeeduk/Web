@@ -103,39 +103,44 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-zinc-800">
-        <div className={styles.sectionContainer}>
-          <div className="row">
-            <div className="col-md-6 text-center mb-5 mb-lg-0">
-              <img className="img-fluid" src="images/groups.png" alt="" />
-            </div>
-            <div className="col-md-6 align-self-center text-center text-md-left">
-              <div className="content">
-                <h3 className="text-white">Say no to Tracking!</h3>
-                <h2 className="subheading text-white font-weight-bold mb-2.5">
-                  Premium Privacy{' '}
-                  <img src="images/icons/lock.fill.white.svg" height="60" />
-                </h2>
-                <p className="text-white">
-                  Echo Photos does not monetize your private data. We do not
-                  track user data for ads or to sell them. For us, you are our
-                  customer - you deserve our best service!
-                </p>
-                <p className="text-white">
-                  Your memories are in a safe place. Using the highest security
-                  standards, we keep up with the newest safety features.
-                </p>
-                <p className="text-white">
-                  Our servers run with cutting-edge security features - we do
-                  not put anything at risk.
-                </p>
-                <p className="text-white">
-                  Privacy is our top concern. All your data is securely stored
-                  in Switzerland 🇨🇭. One should never worry about the protection
-                  of one's pictures.
-                </p>
-              </div>
-            </div>
+      <section className="bg-zinc-800 py-20">
+        <div className={`${styles.sectionContainer} flex`}>
+          <div className="w-1/2 flex items-center justify-center">
+            <img
+              src="images/groups.png"
+              alt="Phone with a demo view of the Groups feature."
+            />
+          </div>
+
+          <div className="w-1/2 my-auto pr-4">
+            <h3 className="text-white">Say no to Tracking!</h3>
+
+            <h2 className="font-bold text-white mb-2.5 flex gap-2 items-center">
+              Premium Privacy
+              <IconLock color="white" />
+            </h2>
+
+            <p className={styles.privacyText}>
+              Echo Photos does not monetize your private data. We do not track
+              user data for ads or to sell them. For us, you are our customer -
+              you deserve our best service!
+            </p>
+
+            <p className={styles.privacyText}>
+              Your memories are in a safe place. Using the highest security
+              standards, we keep up with the newest safety features.
+            </p>
+
+            <p className={styles.privacyText}>
+              Our servers run with cutting-edge security features - we do not
+              put anything at risk.
+            </p>
+
+            <p className={styles.privacyText}>
+              Privacy is our top concern. All your data is securely stored in
+              Switzerland 🇨🇭. One should never worry about the protection of
+              one's pictures.
+            </p>
           </div>
         </div>
       </section>

@@ -3,3 +3,8 @@
   @apply container;
   @apply max-w-6xl;
 }
+
+.privacyText {
+  @apply my-2;
+  @apply text-white;
+}

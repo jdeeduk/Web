@@ -33,7 +33,7 @@ h1 {
 }
 
 h2 {
-  @apply text-[2.5rem];
+  @apply text-4xl;
   @apply leading-relaxed;
 }
 
