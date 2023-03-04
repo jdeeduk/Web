@@ -11,9 +11,7 @@ html {
 }
 
 body {
-  @apply text-sm;
   @apply font-light;
-  @apply text-slate-800;
   font-family: 'Helvetica', 'Arial', sans-serif;
   @apply antialiased;
 }
@@ -33,7 +31,6 @@ h1 {
 
 h2 {
   @apply text-4xl;
-  @apply leading-relaxed;
 }
 
 h3 {
@@ -52,31 +49,4 @@ ul {
   @apply p-0;
   @apply m-0;
   @apply list-none;
-}
-
-.heading {
-  @apply text-center;
-  @apply text-gray-500;
-  @apply pb-10;
-}
-
-.heading h2 {
-  @apply text-slate-800;
-  @apply pb-4;
-  @apply capitalize;
-  @apply font-bold;
-  @apply text-4xl;
-}
-
-.heading p {
-  @apply text-lg;
-  @apply font-light;
-}
-
-.subheading {
-  @apply text-slate-800;
-  @apply pb-4;
-  @apply capitalize;
-  @apply font-medium;
-  @apply text-3xl;
 }

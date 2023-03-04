@@ -1,10 +1,10 @@
 import {
   IconAccessPoint,
-  IconDiscountCheckFilled,
+  IconDiscountCheck,
   IconLeaf,
   IconLock,
   IconPhotoUp,
-  IconStarFilled,
+  IconStar,
   IconUsers,
 } from '@tabler/icons-react';
 import Link from 'next/link';
@@ -72,7 +72,7 @@ export default function Home() {
               independent company benefit everyone.
             </Feature>
 
-            <Feature icon={<IconStarFilled />} title="Free for the first year">
+            <Feature icon={<IconStar />} title="Free for the first year">
               No subscriptions, no storage limits: Premium features are paid
               once and kept forever. During the first year of usage, all albums
               are Premium for free!
@@ -91,7 +91,7 @@ export default function Home() {
               accidentally download your photos again!
             </Feature>
 
-            <Feature icon={<IconDiscountCheckFilled />} title="Refined design">
+            <Feature icon={<IconDiscountCheck />} title="Refined design">
               A carefully crafted app: Simple and yet feature-rich, letting you
               focus on what you want to do.
             </Feature>
@@ -208,7 +208,7 @@ export default function Home() {
           <div className="mt-20 flex">
             <div className="w-1/2 my-auto">
               <h3 className="text-3xl my-2">
-                Premium Photos for unforgettable Moments
+                Premium Photos For Unforgettable Moments
               </h3>
 
               <p className="my-2">
@@ -226,10 +226,10 @@ export default function Home() {
 
       <section id="desktop" className="py-24">
         <div className={styles.sectionContainer}>
-          <div className="heading">
-            <h2>Desktop</h2>
+          <div className="text-center pb-10">
+            <h2 className="font-bold">Desktop</h2>
 
-            <p>
+            <p className="text-neutral-500">
               Use Echo Photos wherever you want! Besides the main iOS and
               Android apps you can also view your albums on macOS and in the
               browser!
@@ -242,7 +242,7 @@ export default function Home() {
             </div>
 
             <div className="w-1/2 my-auto">
-              <h3 className="my-4">Echo Photos in your Browser</h3>
+              <h3 className="my-4">Echo Photos In Your Browser</h3>
 
               <p className="my-4">
                 Upload and download the photos directly from your computer
@@ -259,7 +259,7 @@ export default function Home() {
 
           <div className="flex">
             <div className="w-1/2 my-auto">
-              <h3 className="my-4">Client for macOS</h3>
+              <h3 className="my-4">Client For MacOS</h3>
 
               <p className="my-4">
                 Use Echo Photos through the macOS App on any Mac that uses the
