@@ -37,11 +37,11 @@ h2 {
 }
 
 h3 {
-  @apply text-2xl;
+  @apply text-3xl;
 }
 
 h4 {
-  @apply text-xl;
+  @apply text-2xl;
 }
 
 p {
@@ -79,34 +79,6 @@ ul {
   @apply capitalize;
   @apply font-medium;
   @apply text-3xl;
-}
-
-.btn {
-  @apply rounded-none;
-}
-
-.btn-main {
-  @apply text-white;
-  @apply rounded-lg;
-  @apply text-base;
-  @apply py-4;
-  @apply px-10;
-  @apply inline-block;
-  @apply bg-blue-600;
-}
-
-.btn-main:hover,
-.btn-main:focus {
-  @apply bg-blue-500;
-  @apply text-white;
-}
-
-.btn-main-sm {
-  @apply py-3;
-  @apply px-9;
-  @apply uppercase;
-  @apply text-sm;
-  @apply font-bold;
 }
 
 /*--

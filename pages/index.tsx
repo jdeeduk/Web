@@ -118,7 +118,7 @@ export default function Home() {
 
             <h2 className="font-bold text-white mb-2.5 flex gap-2 items-center">
               Premium Privacy
-              <IconLock color="white" />
+              <IconLock color="white" size={30} />
             </h2>
 
             <p className={styles.privacyText}>
@@ -173,111 +173,111 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="albums">
+      <section id="albums" className="py-24">
         <div className={styles.sectionContainer}>
-          <div className="row">
-            <div className="col-md-12">
-              <div className="heading">
-                <h2>Shared Albums</h2>
-              </div>
+          <h2 className="font-bold mb-6 text-center">Shared Albums</h2>
+
+          <div className="flex">
+            <div className="w-1/2 flex justify-center items-center">
+              <img className="" src="images/group.png" alt="" />
+            </div>
+
+            <div className="w-1/2 my-auto">
+              <h3 className="text-3xl my-2">Share Photos - Keep Forever</h3>
+
+              <p className="my-2">
+                With Echo Photos, you'll get fast, simple and eternal photo
+                sharing. No subscription needed!
+              </p>
+
+              <p className="my-2">
+                Echo Photos is the best way to share pictures of a memorable day
+                with your friends.
+              </p>
+
+              <p className="my-2">
+                Safely store your pictures with Echo Photos' eternal storage.
+              </p>
+
+              <p className="my-2">
+                Like and comment your friends' pictures in your albums.
+              </p>
             </div>
           </div>
-          <div className="row mb-10">
-            <div className="col-md-6 text-center mb-5 mb-lg-0">
-              <img className="img-fluid" src="images/group.png" alt="" />
+
+          <div className="mt-20 flex">
+            <div className="w-1/2 my-auto">
+              <h3 className="text-3xl my-2">
+                Premium Photos for unforgettable Moments
+              </h3>
+
+              <p className="my-2">
+                Share pictures with hundreds of guests of events like weddings,
+                parties and other festivities. 🥳
+              </p>
             </div>
-            <div className="col-md-6 align-self-center text-center text-md-left">
-              <div className="content">
-                <h4 className="subheading">Share Photos - Keep Forever</h4>
-                <p>
-                  With Echo Photos, you'll get fast, simple and eternal photo
-                  sharing. No subscription needed!
-                </p>
-                <p>
-                  Echo Photos is the best way to share pictures of a memorable
-                  day with your friends.
-                </p>
-                <p>
-                  Safely store your pictures with Echo Photos' eternal storage.
-                </p>
-                <p>Like and comment your friends' pictures in your albums.</p>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-6 order-md-1 order-2 align-self-center text-center text-md-left">
-              <div className="content">
-                <h4 className="subheading">
-                  Premium Photos for unforgettable Moments
-                </h4>
-                <p>
-                  Share pictures with hundreds of guests of events like
-                  weddings, parties and other festivities. 🥳
-                </p>
-              </div>
-            </div>
-            <div className="col-md-6 order-md-2 order-1 text-center mb-5 mb-lg-0">
-              <img className="img-fluid" src="images/image.png" alt="" />
+
+            <div className="w-1/2 flex justify-center items-center">
+              <img className="" src="images/image.png" alt="" />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="desktop">
+      <section id="desktop" className="py-24">
         <div className={styles.sectionContainer}>
-          <div className="row">
-            <div className="col-md-12">
-              <div className="heading">
-                <h2>Desktop</h2>
-                <p>
-                  Use Echo Photos wherever you want! Besides the main iOS and
-                  Android apps you can also view your albums on macOS and in the
-                  browser!
-                </p>
-              </div>
-            </div>
+          <div className="heading">
+            <h2>Desktop</h2>
+
+            <p>
+              Use Echo Photos wherever you want! Besides the main iOS and
+              Android apps you can also view your albums on macOS and in the
+              browser!
+            </p>
           </div>
-          <div className="row mb-10">
-            <div className="col-md-6 text-center mb-5 mb-lg-0">
-              <img className="img-fluid" src="images/browser.jpg" alt="" />
+
+          <div className="flex">
+            <div className="w-1/2 justify-center items-center">
+              <img className="" src="images/browser.jpg" alt="" />
             </div>
-            <div className="col-md-6 align-self-center text-center text-md-left">
-              <div className="content">
-                <h4 className="subheading">Echo Photos in your Browser</h4>
-                <p>
-                  Upload and download the photos directly from your computer
-                  through the Echo Photos browser plugin.
-                </p>
-                <Link
-                  href="https://web.echophotos.io"
-                  target="_blank"
-                  className="btn btn-main btn-main-sm"
-                >
+
+            <div className="w-1/2 my-auto">
+              <h3 className="my-4">Echo Photos in your Browser</h3>
+
+              <p className="my-4">
+                Upload and download the photos directly from your computer
+                through the Echo Photos browser plugin.
+              </p>
+
+              <Link href="https://web.echophotos.io" target="_blank">
+                <button className="mt-4 text-white rounded-lg text-sm font-bold py-3 px-9 uppercase inline-block bg-blue-600 hover:bg-blue-500 focus:bg-blue-500">
                   Open Web App
-                </Link>
-              </div>
+                </button>
+              </Link>
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-6 order-md-1 order-2 align-self-center text-center text-md-left">
-              <div className="content">
-                <h4 className="subheading">Client for macOS</h4>
-                <p>
-                  Use Echo Photos through the macOS App on any Mac that uses the
-                  same iCloud account as your iOS device. Currently, log-in is
-                  only possible this way.
-                </p>
-                <Link href="https://apps.apple.com/us/app/id1499073049">
-                  <img
-                    src="images/MacAppStore.svg"
-                    height="40"
-                    alt="Get Echo from the App Store"
-                  />
-                </Link>
-              </div>
+
+          <div className="flex">
+            <div className="w-1/2 my-auto">
+              <h3 className="my-4">Client for macOS</h3>
+
+              <p className="my-4">
+                Use Echo Photos through the macOS App on any Mac that uses the
+                same iCloud account as your iOS device. Currently, log-in is
+                only possible this way.
+              </p>
+
+              <Link href="https://apps.apple.com/us/app/id1499073049">
+                <img
+                  src="images/MacAppStore.svg"
+                  height="40"
+                  alt="Get Echo from the App Store"
+                />
+              </Link>
             </div>
-            <div className="col-md-6 order-md-2 order-1 text-center mb-5 mb-lg-0">
-              <img className="img-fluid" src="images/macOS.jpg" alt="" />
+
+            <div className="w-1/2 flex justify-center items-center">
+              <img className="" src="images/macOS.jpg" alt="" />
             </div>
           </div>
         </div>
