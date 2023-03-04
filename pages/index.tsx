@@ -1,10 +1,19 @@
+import {
+  IconAccessPoint,
+  IconDiscountCheckFilled,
+  IconLock,
+  IconPhotoUp,
+  IconStarFilled,
+  IconUsers,
+} from '@tabler/icons-react';
 import Link from 'next/link';
+import Feature from '../components/Feature';
 import styles from './Home.module.css';
 
 export default function Home() {
   return (
     <>
-      <section className="mt-5">
+      <section className="pt-5 pb-24">
         <div
           className={`flex justify-center items-center ${styles.sectionContainer}`}
         >
@@ -46,86 +55,50 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="features" className="mt-48">
+      <section className="py-24" id="features">
         <div
           className={`flex flex-col items-center ${styles.sectionContainer}`}
         >
           <h2 className="font-bold mb-6">Unlimited Memories</h2>
 
-          <div className="grid grid-rows-3 grid-cols-3 grid-flow-col">
-            <div className="mb-10 text-center text-md-left">
-              <h3 className="font-weight-bold mb-2">
-                <img src="images/icons/photo.on.rectangle.svg" height="40" />
-              </h3>
-              <h4 className="font-weight-bold mb-2">Full Resolution</h4>
-              <p>
-                Share your photos in full resolution in its original quality.
-              </p>
+          <div className="grid grid-rows-3 grid-cols-3 grid-flow-col gap-y-4">
+            <Feature icon={<IconPhotoUp />} title="Full resolution">
+              Share your photos in full resolution in their original quality.
+            </Feature>
+
+            <Feature icon={<IconLock />} title="Premium privacy">
+              No ads, no tracking and secure storage: the advantages of an
+              independent company benefit everyone.
+            </Feature>
+
+            <Feature icon={<IconStarFilled />} title="Free for the first year">
+              No subscriptions, no storage limits: Premium features are paid
+              once and kept forever. During the first year of usage, all albums
+              are Premium for free!
+            </Feature>
+
+            <div className="row-span-3 my-auto">
+              <img
+                src="images/iphone.png"
+                alt="Phone with a demo view of the EchoPhotos app."
+              />
             </div>
 
-            <div className="mb-10 text-center text-md-left">
-              <h3 className="font-weight-bold mb-2">
-                <img src="images/icons/lock.fill.svg" height="40" />
-              </h3>
-              <h4 className="font-weight-bold mb-2">Premium Privacy</h4>
-              <p>
-                No ads, no tracking and secure storage: The advantages of an
-                independent company benefit everyone.
-              </p>
-            </div>
+            <Feature icon={<IconAccessPoint />} title="AirDrop, but for groups">
+              Apart from Android support, Echo Photos has many advantages
+              compared to AirDrop. With smart download tools, do never
+              accidentally download your photos again!
+            </Feature>
 
-            <div className="mb-10 text-center text-md-left">
-              <h3 className="font-weight-bold mb-2">
-                <img src="images/icons/star.fill.svg" height="40" />
-              </h3>
-              <h4 className="font-weight-bold mb-2">Free for the First Year</h4>
-              <p>
-                No subscriptions, no storage limits: Premium features are paid
-                once and kept forever. During the first year of usage, all
-                albums are premium for free!
-              </p>
-            </div>
+            <Feature icon={<IconDiscountCheckFilled />} title="Refined design">
+              A carefully crafted app: Simple and yet feature-rich, letting you
+              focus on what you want to do.
+            </Feature>
 
-            <div className="row-span-3">
-              <img className="img-fluid" src="images/iphone.png" alt="" />
-            </div>
-
-            <div className="mb-10 text-center text-md-left">
-              <h3 className="font-weight-bold mb-2">
-                <img
-                  src="images/icons/dot.radiowaves.left.and.right.svg"
-                  height="40"
-                />
-              </h3>
-              <h4 className="font-weight-bold mb-2">AirDrop, but for Groups</h4>
-              <p>
-                Apart from Android support, Echo Photos has many advantages
-                compared to AirDrop. With smart download tools, do never
-                accidentially download your photos again!
-              </p>
-            </div>
-
-            <div className="mb-10 text-center text-md-left">
-              <h3 className="font-weight-bold mb-2">
-                <img src="images/icons/checkmark.seal.fill.svg" height="40" />
-              </h3>
-              <h4 className="font-weight-bold mb-2">Refined Design</h4>
-              <p>
-                A carefully crafted app: Simple and yet feature-rich, letting
-                you focus on what you want to do.
-              </p>
-            </div>
-
-            <div className="mb-10 text-center text-md-left">
-              <h3 className="font-weight-bold mb-2">
-                <img src="images/icons/person.2.fill.svg" height="40" />
-              </h3>
-              <h4 className="font-weight-bold mb-2">Social Sharing</h4>
-              <p>
-                Comments and likes for your group images: Echo provides a
-                private social network experience. For real friends only.
-              </p>
-            </div>
+            <Feature icon={<IconUsers />} title="Social sharing">
+              Comments and likes for your group images: Echo provides a private
+              social network experience. For real friends only.
+            </Feature>
           </div>
         </div>
       </section>
