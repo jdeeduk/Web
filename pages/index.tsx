@@ -18,11 +18,15 @@ export default function Home() {
         <div
           className={`flex justify-center items-center ${styles.sectionContainer}`}
         >
-          <div className="w-1/2 flex justify-center items-center">
-            <img src="images/title.png" alt="" width="300" />
+          <div className="w-1/2 flex justify-center items-center px-2">
+            <img
+              src="images/title.png"
+              alt="Three phones with demo views of the Echo Photos application."
+              width="300"
+            />
           </div>
 
-          <div className="w-1/2 flex flex-wrap">
+          <div className="w-1/2 flex flex-col px-2">
             <h1 className="font-bold mb-6">
               Full-Res. Simple. Supreme Photo Albums
             </h1>
@@ -58,7 +62,7 @@ export default function Home() {
 
       <section className="py-24" id="features">
         <div
-          className={`flex flex-col items-center ${styles.sectionContainer}`}
+          className={`flex flex-col items-center ${styles.sectionContainer} px-4`}
         >
           <h2 className="font-bold mb-6">Unlimited Memories</h2>
 
@@ -182,7 +186,7 @@ export default function Home() {
               <img className="" src="images/group.png" alt="" />
             </div>
 
-            <div className="w-1/2 my-auto">
+            <div className="w-1/2 my-auto pr-4">
               <h3 className="text-3xl my-2">Share Photos - Keep Forever</h3>
 
               <p className="my-2">
@@ -206,7 +210,7 @@ export default function Home() {
           </div>
 
           <div className="mt-20 flex">
-            <div className="w-1/2 my-auto">
+            <div className="w-1/2 my-auto text-right pl-4">
               <h3 className="text-3xl my-2">
                 Premium Photos For Unforgettable Moments
               </h3>
@@ -225,11 +229,11 @@ export default function Home() {
       </section>
 
       <section id="desktop" className="py-24">
-        <div className={styles.sectionContainer}>
+        <div className={`${styles.sectionContainer} px-4`}>
           <div className="text-center pb-10">
-            <h2 className="font-bold">Desktop</h2>
+            <h2 className="font-bold mb-4">Desktop</h2>
 
-            <p className="text-neutral-500">
+            <p className="text-neutral-500 px-6">
               Use Echo Photos wherever you want! Besides the main iOS and
               Android apps you can also view your albums on macOS and in the
               browser!
@@ -237,11 +241,11 @@ export default function Home() {
           </div>
 
           <div className="flex">
-            <div className="w-1/2 justify-center items-center">
+            <div className="w-1/2 justify-center items-center p-6">
               <img className="" src="images/browser.jpg" alt="" />
             </div>
 
-            <div className="w-1/2 my-auto">
+            <div className="w-1/2 my-auto p-6">
               <h3 className="my-4">Echo Photos In Your Browser</h3>
 
               <p className="my-4">
@@ -258,7 +262,7 @@ export default function Home() {
           </div>
 
           <div className="flex">
-            <div className="w-1/2 my-auto">
+            <div className="w-1/2 my-auto p-6">
               <h3 className="my-4">Client For MacOS</h3>
 
               <p className="my-4">
@@ -276,7 +280,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="w-1/2 flex justify-center items-center">
+            <div className="w-1/2 flex justify-center items-center p-6">
               <img className="" src="images/macOS.jpg" alt="" />
             </div>
           </div>
