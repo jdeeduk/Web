@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Home.module.css';
 
@@ -26,7 +25,7 @@ export default function Home() {
 
             <div className="flex items-center">
               <Link href="https://apps.apple.com/us/app/id1499073049">
-                <Image
+                <img
                   src="images/AppStore.svg"
                   height="40"
                   width="120"
@@ -35,7 +34,7 @@ export default function Home() {
               </Link>
 
               <Link href="https://play.google.com/store/apps/details?id=ch.echolabs.echo">
-                <Image
+                <img
                   src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                   height="60"
                   width="155"
