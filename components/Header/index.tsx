@@ -1,10 +1,14 @@
 import { IconMenu, IconX } from '@tabler/icons-react';
 import Link from 'next/link';
-import { useCallback, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useCallback, useEffect, useState } from 'react';
 import styles from './header.module.css';
 
 export default () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => setIsOpen(false), [router.asPath]);
 
   const toggleOpen = useCallback(() => {
     setIsOpen(!isOpen);
@@ -31,7 +35,7 @@ export default () => {
             isOpen ? '' : 'hidden'
           } bg-white w-full  md:p-0 md:w-auto md:mr-2 md:top-0 md:relative md:block`}
         >
-          <ul className="flex justify-between flex-col w-full gap-1 md:flex-row md:gap-6">
+          <ul className="flex justify-between flex-col w-full gap-3 md:flex-row md:gap-6">
             <li>
               <Link className={styles.navLink} href="/#features">
                 Features

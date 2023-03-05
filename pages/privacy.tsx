@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Section from '../components/Section';
 
-export default function Privacy() {
+export default function PrivacyPage() {
   return (
     <>
       <Head>

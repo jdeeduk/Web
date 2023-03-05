@@ -8,11 +8,13 @@ import {
   IconUsers,
 } from '@tabler/icons-react';
 import Link from 'next/link';
+import AppStore from '../components/AppStore';
 import Button from '../components/Button';
 import Feature from '../components/Feature';
+import GooglePlay from '../components/GooglePlay';
 import styles from './Home.module.css';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <section className="pt-5 pb-24">
@@ -39,35 +41,15 @@ export default function Home() {
             </p>
 
             <div className="flex items-center">
-              <Link
-                href="https://apps.apple.com/us/app/id1499073049"
-                target="_blank"
-              >
-                <img
-                  src="images/AppStore.svg"
-                  height="40"
-                  width="120"
-                  alt="Get Echo from the App Store"
-                />
-              </Link>
+              <AppStore />
 
-              <Link
-                href="https://play.google.com/store/apps/details?id=ch.echolabs.echo"
-                target="_blank"
-              >
-                <img
-                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                  height="60"
-                  width="155"
-                  alt="Get Echo on Google Play"
-                />
-              </Link>
+              <GooglePlay />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24" id="features">
+      <section className="pt-24 pb-40" id="features">
         <div
           className={`flex flex-col items-center ${styles.sectionContainer} px-4`}
         >
@@ -276,16 +258,7 @@ export default function Home() {
                 only possible this way.
               </p>
 
-              <Link
-                href="https://apps.apple.com/us/app/id1499073049"
-                target="_blank"
-              >
-                <img
-                  src="images/MacAppStore.svg"
-                  height="40"
-                  alt="Get Echo from the App Store"
-                />
-              </Link>
+              <AppStore mac />
             </div>
 
             <div className="w-1/2 flex justify-center items-center p-6">

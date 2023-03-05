@@ -4,12 +4,13 @@ import Link from 'next/link';
 import Section from '../../components/Section';
 import styles from './press.module.css';
 
-export default function Press() {
+export default function PressPage() {
   return (
     <>
       <Head>
         <title>Echo Photos - Press</title>
       </Head>
+
       <Section title="Press">
         <p className="mb-4">
           We have a collection of images in a press kit as well as a flyer

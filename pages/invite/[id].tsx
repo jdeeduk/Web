@@ -5,6 +5,9 @@ import QRCode from 'react-qr-code';
 import { useEffect, useState } from 'react';
 import { GetServerSideProps } from 'next';
 import admin from 'firebase-admin';
+import Button from '../../components/Button';
+import GooglePlay from '../../components/GooglePlay';
+import AppStore from '../../components/AppStore';
 
 export interface InviteData {
   albumImagePreviewURL?: string;
@@ -52,7 +55,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   };
 };
 
-export default (inviteData: InviteData) => {
+export default function InvitePage(inviteData: InviteData) {
   const router = useRouter();
   const fullInviteId = router.query.id as string;
   const inviteCode = fullInviteId.substring(0, 8);
@@ -69,7 +72,7 @@ export default (inviteData: InviteData) => {
   return (
     <>
       <Head>
-        <title>Echo Photos A</title>
+        <title>Echo Photos - Invite to {inviteData.albumName}</title>
 
         <meta
           property="og:image"
@@ -91,81 +94,63 @@ export default (inviteData: InviteData) => {
       </Head>
 
       <section>
-        <div className="container">
-          <div id="inviteInfo" className="row">
-            <div className="col-md-6 text-center mb-5 mb-md-0" id="qrcode">
+        <div className="container mx-auto max-w-6xl py-8">
+          <div id="inviteInfo" className="flex mb-20">
+            <div
+              className="w-1/2 flex justify-center items-center px-5"
+              id="qrcode"
+            >
               <QRCode value={qrUrl} />
             </div>
-            <div className="col-md-6 align-self-center text-center text-md-left">
+
+            <div className="w-1/2 px-5 my-auto">
               <div className="block">
-                <h4 className="font-weight-bold mb-4 font-size-55" id="title">
+                <h4 className="font-bold mb-4 font-size-55" id="title">
                   Album Invite Code
                 </h4>
+
                 <p
                   style={{
-                    textAlign: 'center',
-                    paddingTop: '20px',
-                    paddingRight: '20px',
-                    paddingBottom: '20px',
-                    paddingLeft: '20px',
-                    backgroundColor: 'lightgray',
-                    borderRadius: '25px',
-                    textTransform: 'uppercase',
-                    fontWeight: 'light',
-                    fontSize: '50px',
                     fontFamily: "'Courier New', ui-monospace",
                   }}
                   id="inviteCode"
+                  className="text-center py-2 px-5 bg-neutral-200 rounded-3xl uppercase font-light text-5xl mb-2"
                 >
                   {inviteCode}
                 </p>
-                <p className="mb-4">
+
+                <p className="mb-6">
                   Join the album by <b>entering the code</b> in the Echo Photos
                   app. You can also <b>scan the QR code with your phone</b> if
                   you have the app installed.
                 </p>
-                <button
-                  className="btn btn-main btn-main-sm"
-                  onClick={() => copyToClipboard()}
-                >
-                  Copy Code
-                </button>
+
+                <Button onClick={copyToClipboard}>Copy Code</Button>
               </div>
             </div>
           </div>
-          <div className="row">
-            <div>
-              <svg width="100" height="100" />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-6 align-self-center text-center text-md-left">
+
+          <div className="flex">
+            <div className="w-1/2 px-5 my-auto">
               <div className="block">
-                <h1 className="font-weight-bold mb-4 font-size-55" id="title">
+                <h1 className="font-bold mb-6" id="title">
                   Get Echo Photos
                 </h1>
-                <p className="mb-4">
+
+                <p className="mb-6">
                   The invite link you are trying to open can be opened with the
                   Echo Photos App.
                 </p>
 
-                <Link href="https://apps.apple.com/us/app/id1499073049">
-                  <img
-                    src="/images/AppStore.svg"
-                    height="40"
-                    alt="Get Echo from the App Store"
-                  />
-                </Link>
-                <Link href="https://play.google.com/store/apps/details?id=ch.echolabs.echo">
-                  <img
-                    height={60}
-                    alt="Get it on Google Play"
-                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                  />
-                </Link>
+                <div className="flex items-center">
+                  <AppStore />
+
+                  <GooglePlay />
+                </div>
               </div>
             </div>
-            <div className="col-md-6 text-center mb-5 mb-md-0">
+
+            <div className="w-1/2 px-5 flex items-center justify-center">
               <img src="/images/AppIcon300.png" />
             </div>
           </div>
@@ -173,4 +158,4 @@ export default (inviteData: InviteData) => {
       </section>
     </>
   );
-};
+}
