@@ -1,7 +1,10 @@
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-neutral-100 py-12 text-sm mt-auto">
       <div className="container mx-auto text-center flex flex-col items-center">
@@ -12,13 +15,13 @@ export default function Footer() {
         <ul className="flex gap-x-6 gap-y-3 mt-4 flex-wrap justify-center px-10">
           <li>
             <Link className={styles.footerLink} href="/">
-              Home
+              {t('footer.home')}
             </Link>
           </li>
 
           <li>
             <Link className={styles.footerLink} href="/#albums">
-              Albums
+              {t('footer.albums')}
             </Link>
           </li>
 
@@ -28,7 +31,7 @@ export default function Footer() {
               href="https://web.echophotos.io"
               target="_blank"
             >
-              Web App
+              {t('footer.webapp')}
             </Link>
           </li>
 
@@ -39,31 +42,31 @@ export default function Footer() {
               rel="noreferrer noopener"
               className={styles.footerLink}
             >
-              Instagram
+              {t('footer.instagram')}
             </Link>
           </li>
 
           <li>
             <Link className={styles.footerLink} href="/">
-              Download
+              {t('footer.download')}
             </Link>
           </li>
 
           <li>
             <Link className={styles.footerLink} href="/privacy">
-              Privacy
+              {t('footer.privacy')}
             </Link>
           </li>
 
           <li>
             <Link className={styles.footerLink} href="/press">
-              Press
+              {t('footer.press')}
             </Link>
           </li>
         </ul>
 
         <p className="text-neutral-500 font-light text-xs leading-5 mt-6 mb-8">
-          Copyright &copy;{' '}
+          {t('footer.copyright.text-before')} &copy;{' '}
           <Link
             href="http://www.echolabs.ch"
             target="_blank"
@@ -72,10 +75,10 @@ export default function Footer() {
             {' '}
             Echo Labs AG
           </Link>{' '}
-          | All rights reserved.
+          | {t('footer.copyright.rights')}
         </p>
 
-        <span className="text-neutral-500 mb-4">Coded with ❤️ in 🇨🇭</span>
+        <span className="text-neutral-500 mb-4">{t('footer.bottom-text')}</span>
       </div>
     </footer>
   );

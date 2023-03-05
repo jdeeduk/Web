@@ -2,11 +2,13 @@ import { IoMenu, IoClose } from "react-icons/io5";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import styles from './header.module.css';
 
 export default () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  const { t } = useTranslation();
 
   useEffect(() => setIsOpen(false), [router.asPath]);
 
@@ -34,25 +36,25 @@ export default () => {
           <ul className="flex justify-between flex-col w-full gap-3 md:flex-row md:gap-6">
             <li>
               <Link className={styles.navLink} href="/#features">
-                Features
+                {t('navbar.features')}
               </Link>
             </li>
 
             <li>
               <Link className={styles.navLink} href="/#albums">
-                Albums
+                {t('navbar.albums')}
               </Link>
             </li>
 
             <li>
               <Link className={styles.navLink} href="/#desktop">
-                Desktop
+                {t('navbar.desktop')}
               </Link>
             </li>
 
             <li>
               <Link className={styles.navLink} href="/">
-                Download
+                {t('navbar.download')}
               </Link>
             </li>
           </ul>

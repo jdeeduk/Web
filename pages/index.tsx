@@ -7,14 +7,27 @@ import {
   IoPeople,
   IoSparkles,
 } from "react-icons/io5";
+import { GetStaticPropsContext } from 'next';
 import Link from 'next/link';
 import AppStore from '../components/AppStore';
 import Button from '../components/Button';
 import Feature from '../components/Feature';
 import GooglePlay from '../components/GooglePlay';
 import styles from './Home.module.css';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', ['common', 'home'])),
+    },
+  };
+}
 
 export default function HomePage() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className="pt-5 pb-24">
@@ -24,21 +37,15 @@ export default function HomePage() {
           <div className="md:w-1/2 flex justify-center items-center px-2">
             <img
               src="images/title.png"
-              alt="Three phones with demo views of the Echo Photos application."
+              alt={t('home:image-alt-text') ?? ''}
               width="300"
             />
           </div>
 
           <div className="md:w-1/2 flex flex-col px-2 md:mt-0 mt-10">
-            <h1 className="font-bold mb-6">
-              Full-Res. Simple. Supreme Photo Albums
-            </h1>
+            <h1 className="font-bold mb-6">{t('home:title')}</h1>
 
-            <p className="mb-6">
-              The prime solution for sharing photos: Create albums, add friends,
-              upload full-resolution images and write comments - make
-              everlasting memories!
-            </p>
+            <p className="mb-6">{t('home:subtitle')}</p>
 
             <div className="flex items-center justify-center md:justify-start">
               <AppStore />
@@ -53,45 +60,58 @@ export default function HomePage() {
         <div
           className={`flex flex-col items-center text-center md:text-left ${styles.sectionContainer} px-4`}
         >
-          <h2 className="font-bold mb-10 md:mb-6">Unlimited Memories</h2>
+          <h2 className="font-bold mb-10 md:mb-6">
+            {t('home:features.title')}
+          </h2>
 
           <div className="md:grid flex flex-col grid-rows-3 grid-cols-3 grid-flow-col gap-10 md:gap-y-4">
-            <Feature icon={<IoImages />} title="Full resolution">
-              Share your photos in full resolution in their original quality.
+            <Feature
+              icon={<IoImages />}
+              title={t('home:features.list.0.title')}
+            >
+              {t('home:features.list.0.description')}
             </Feature>
 
-            <Feature icon={<IoLockClosed />} title="Premium privacy">
-              No ads, no tracking and secure storage: the advantages of an
-              independent company benefit everyone.
+            <Feature
+              icon={<IoLockClosed />}
+              title={t('home:features.list.1.title')}
+            >
+              {t('home:features.list.1.description')}
             </Feature>
 
-            <Feature icon={<IoStar />} title="Free for the first year">
-              No subscriptions, no storage limits: Premium features are paid
-              once and kept forever. During the first year of usage, all albums
-              are Premium for free!
+            <Feature
+              icon={<IoStar />}
+              title={t('home:features.list.2.title')}
+            >
+              {t('home:features.list.2.description')}
             </Feature>
 
             <div className="row-span-3 my-auto mx-auto">
               <img
                 src="images/iphone.png"
-                alt="Phone with a demo view of the EchoPhotos app."
+                alt={t('home:features.image-alt-text') ?? ''}
               />
             </div>
 
-            <Feature icon={<IoRadioOutline />} title="AirDrop, but for groups">
-              Apart from Android support, Echo Photos has many advantages
-              compared to AirDrop. With smart download tools, do never
-              accidentally download your photos again!
+            <Feature
+              icon={<IoRadioOutline />}
+              title={t('home:features.list.3.title')}
+            >
+              {t('home:features.list.3.description')}
             </Feature>
 
-            <Feature icon={<IoSparkles />} title="Refined design">
-              A carefully crafted app: Simple and yet feature-rich, letting you
-              focus on what you want to do.
+            <Feature
+              icon={<IoSparkles />}
+              title={t('home:features.list.4.title')}
+            >
+              {t('home:features.list.4.description')}
             </Feature>
 
-            <Feature icon={<IoPeople />} title="Social sharing">
-              Comments and likes for your group images: Echo provides a private
-              social network experience. For real friends only.
+            <Feature
+              icon={<IoPeople />}
+              title={t('home:features.list.5.title')}
+            >
+              {t('home:features.list.5.description')}
             </Feature>
           </div>
         </div>
