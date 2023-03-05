@@ -124,38 +124,32 @@ export default function HomePage() {
           <div className="md:w-1/2 flex items-center justify-center">
             <img
               src="images/groups.png"
-              alt="Phone with a demo view of the Groups feature."
+              alt={t('home:privacy.image-alt-text') ?? ''}
             />
           </div>
 
           <div className="md:w-1/2 my-auto px-4">
-            <h3 className="text-white">Say no to Tracking!</h3>
+            <h3 className="text-white">{t('home:privacy.subtitle')}</h3>
 
             <h2 className="font-bold text-white mb-2.5 flex text-[2.25rem] gap-2 items-center justify-center md:justify-start">
-              Premium Privacy
+              {t('home:privacy.title')}
               <IoLockClosed color="white" size={30} />
             </h2>
 
             <p className={styles.privacyText}>
-              Echo Photos does not monetize your private data. We do not track
-              user data for ads or to sell them. For us, you are our customer -
-              you deserve our best service!
+              {t('home:privacy.paragraphs.0')}
             </p>
 
             <p className={styles.privacyText}>
-              Your memories are in a safe place. Using the highest security
-              standards, we keep up with the newest safety features.
+              {t('home:privacy.paragraphs.1')}
             </p>
 
             <p className={styles.privacyText}>
-              Our servers run with cutting-edge security features - we do not
-              put anything at risk.
+              {t('home:privacy.paragraphs.2')}
             </p>
 
             <p className={styles.privacyText}>
-              Privacy is our top concern. All your data is securely stored in
-              Switzerland 🇨🇭. One should never worry about the protection of
-              one's pictures.
+              {t('home:privacy.paragraphs.3')}
             </p>
           </div>
         </div>
@@ -166,25 +160,23 @@ export default function HomePage() {
           className={`${styles.sectionContainer} flex md:flex-row flex-col items-center`}
         >
           <div className="md:w-1/2 text-center md:text-right my-auto px-6">
-            <h3 className="text-green-700">Care for the Climate</h3>
+            <h3 className="text-green-700">{t('home:climate.subtitle')}</h3>
 
             <h2 className="font-bold mb-4 flex items-center gap-2 text-[2.25rem] text-green-700 justify-center md:justify-end">
-              <IoLeaf className="-scale-x-100" size={32} />
-              Carbon Neutral
+              <IoLeaf className="-scale-x-100 -z-10" size={32} />
+              {t('home:climate.title')}
             </h2>
 
-            <p className="mb-1">Our servers run entirely carbon-neutral.</p>
+            <p className="mb-1">{t('home:climate.paragraphs.0')}</p>
 
-            <p className="mb-4">
-              Plus, we are committed to be completely carbon-free by 2030.
-            </p>
+            <p className="mb-4">{t('home:climate.paragraphs.1')}</p>
           </div>
 
           <div className="md:w-1/2 flex justify-center items-center px-6">
             <img
               className=""
               src="https://source.unsplash.com/eluzJSfkNCk/400x600"
-              alt=""
+              alt={t('home:climate.image-alt-text') ?? ''}
             />
           </div>
         </div>
@@ -192,50 +184,48 @@ export default function HomePage() {
 
       <section id="albums" className="py-24">
         <div className={styles.sectionContainer}>
-          <h2 className="font-bold mb-6 text-center">Shared Albums</h2>
+          <h2 className="font-bold mb-6 text-center">
+            {t('home:albums.title')}
+          </h2>
 
           <div className="flex md:flex-row flex-col items-center text-center md:text-left">
             <div className="md:w-1/2 flex justify-center items-center">
-              <img className="" src="images/group.png" alt="" />
+              <img
+                src="images/group.png"
+                alt={t('home:albums.sections.0.image-alt-text') ?? ''}
+              />
             </div>
 
             <div className="md:w-1/2 my-auto px-6">
-              <h3 className="text-3xl my-4">Share Photos - Keep Forever</h3>
+              <h3 className="text-3xl my-4">
+                {t('home:albums.sections.0.title')}
+              </h3>
 
-              <p className="my-1">
-                With Echo Photos, you'll get fast, simple and eternal photo
-                sharing. No subscription needed!
-              </p>
+              <p className="my-1">{t('home:albums.sections.0.paragraphs.0')}</p>
 
-              <p className="my-1">
-                Echo Photos is the best way to share pictures of a memorable day
-                with your friends.
-              </p>
+              <p className="my-1">{t('home:albums.sections.0.paragraphs.1')}</p>
 
-              <p className="my-1">
-                Safely store your pictures with Echo Photos' eternal storage.
-              </p>
+              <p className="my-1">{t('home:albums.sections.0.paragraphs.2')}</p>
 
-              <p className="my-1">
-                Like and comment your friends' pictures in your albums.
-              </p>
+              <p className="my-1">{t('home:albums.sections.0.paragraphs.3')}</p>
             </div>
           </div>
 
           <div className="mt-16 flex md:flex-row flex-col text-center md:text-left">
             <div className="md:w-1/2 my-auto px-6 order-2 md:order-1">
               <h3 className="text-3xl my-4">
-                Premium Photos For Unforgettable Moments
+                {t('home:albums.sections.1.title')}
               </h3>
 
-              <p className="my-1">
-                Share pictures with hundreds of guests of events like weddings,
-                parties and other festivities. 🥳
-              </p>
+              <p className="my-1">{t('home:albums.sections.1.description')}</p>
             </div>
 
             <div className="md:w-1/2 flex justify-center items-center order-1 md:order-2">
-              <img className="" src="images/image.png" alt="" />
+              <img
+                className=""
+                src="images/image.png"
+                alt={t('home:albums.sections.1.image-alt-text') ?? ''}
+              />
             </div>
           </div>
         </div>
@@ -244,49 +234,52 @@ export default function HomePage() {
       <section id="desktop" className="py-24">
         <div className={`${styles.sectionContainer} lg:p-0 md:px-16`}>
           <div className="text-center pb-10">
-            <h2 className="font-bold mb-4">Desktop</h2>
+            <h2 className="font-bold mb-4">{t('home:desktop.title')}</h2>
 
             <p className="text-neutral-500 px-6">
-              Use Echo Photos wherever you want! Besides the main iOS and
-              Android apps you can also view your albums on macOS and in the
-              browser!
+              {t('home:desktop.description')}
             </p>
           </div>
 
           <div className="flex md:flex-row flex-col text-center md:text-left mb-6 md:mb-0">
             <div className="md:w-1/2 justify-center items-center p-6">
-              <img className="" src="images/browser.jpg" alt="" />
+              <img
+                className=""
+                src="images/browser.jpg"
+                alt={t('home:desktop.sections.0.image-alt-text') ?? ''}
+              />
             </div>
 
             <div className="md:w-1/2 my-auto p-6 flex flex-col items-center md:block">
-              <h3 className="mt-4 mb-2">Echo Photos In Your Browser</h3>
+              <h3 className="mt-4 md:mt-0 mb-2">
+                {t('home:desktop.sections.0.title')}
+              </h3>
 
-              <p className="mb-4">
-                Upload and download the photos directly from your computer
-                through the Echo Photos browser plugin.
-              </p>
+              <p className="mb-4">{t('home:desktop.sections.0.description')}</p>
 
               <Link href="https://web.echophotos.io" target="_blank">
-                <Button>Open Web App</Button>
+                <Button>{t('home:desktop.sections.0.open-web-app')}</Button>
               </Link>
             </div>
           </div>
 
           <div className="flex md:flex-row flex-col text-center md:text-left">
             <div className="md:w-1/2 my-auto p-6 order-2 md:order-1 flex flex-col items-center md:block">
-              <h3 className="mt-4 mb-2">Client For MacOS</h3>
+              <h3 className="mt-4 mb-2">
+                {t('home:desktop.sections.1.title')}
+              </h3>
 
-              <p className="mb-4">
-                Use Echo Photos through the macOS App on any Mac that uses the
-                same iCloud account as your iOS device. Currently, log-in is
-                only possible this way.
-              </p>
+              <p className="mb-4">{t('home:desktop.sections.1.description')}</p>
 
               <AppStore mac />
             </div>
 
             <div className="md:w-1/2 flex justify-center items-center p-6 order-1 md:order-2">
-              <img className="" src="images/macOS.jpg" alt="" />
+              <img
+                className=""
+                src="images/macOS.jpg"
+                alt={t('home:desktop.sections.1.image-alt-text') ?? ''}
+              />
             </div>
           </div>
         </div>

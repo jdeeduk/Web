@@ -31,5 +31,62 @@
         "description": "Comments and likes for your group images: Echo provides a private social network experience. For real friends only."
       }
     ]
+  },
+  "privacy": {
+    "image-alt-text": "Phone with a demo view of the Groups feature.",
+    "subtitle": "Say no to Tracking!",
+    "title": "Premium Privacy",
+    "paragraphs": [
+      "Echo Photos does not monetize your private data. We do not track user data for ads or to sell them. For us, you are our customer - you deserve our best service!",
+      "Your memories are in a safe place. Using the highest security standards, we keep up with the newest safety features.",
+      "Our servers run with cutting-edge security features - we do not put anything at risk.",
+      "Privacy is our top concern. All your data is securely stored in Switzerland 🇨🇭. One should never worry about the protection of one's pictures."
+    ]
+  },
+  "climate": {
+    "subtitle": "Care for the Climate",
+    "title": "Carbon Neutral",
+    "paragraphs": [
+      "Our servers run entirely carbon-neutral.",
+      "Plus, we are committed to be completely carbon-free by 2030."
+    ],
+    "image-alt-text": "View of the mountains."
+  },
+  "albums": {
+    "title": "Shared Albums",
+    "sections": [
+      {
+        "title": "Share Photos - Keep Forever",
+        "image-alt-text": "Albums in the Echo Photos app.",
+        "paragraphs": [
+          "With Echo Photos, you'll get fast, simple and eternal photo sharing. No subscription needed!",
+          "Echo Photos is the best way to share pictures of a memorable day with your friends.",
+          "Safely store your pictures with Echo Photos' eternal storage.",
+          "Like and comment your friends' pictures in your albums."
+        ]
+      },
+      {
+        "title": "Premium Photos For Unforgettable Moments",
+        "description": "Share pictures with hundreds of guests of events like weddings, parties and other festivities. 🥳",
+        "image-alt-text": "A picture of the northern lights shared in the Echo Photos app."
+      }
+    ]
+  },
+  "desktop": {
+    "title": "Desktop",
+    "description": "Use Echo Photos wherever you want! Besides the main iOS and Android apps you can also view your albums on macOS and in the browser!",
+    "sections": [
+      {
+        "image-alt-text": "Screenshot of the Echo Photos browser app.",
+        "title": "Echo Photos In Your Browser",
+        "description": "Upload and download the photos directly from your computer through the Echo Photos browser plugin.",
+        "open-web-app": "Open Web App"
+      },
+      {
+        "image-alt-text": "Screenshot of the MacOS Echo Photos app.",
+        "title": "Client For MacOS",
+        "description": "Use Echo Photos through the macOS App on any Mac that uses the same iCloud account as your iOS device. Currently, log-in is only possible this way."
+      }
+    ]
   }
 }
