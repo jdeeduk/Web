@@ -1,0 +1,8 @@
+.link {
+  @apply underline;
+  @apply hover:text-blue-500;
+  @apply flex;
+  @apply gap-2;
+  @apply items-center;
+  @apply mb-4;
+}
