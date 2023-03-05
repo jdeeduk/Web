@@ -95,43 +95,43 @@ export default function InvitePage(inviteData: InviteData) {
 
       <section>
         <div className="container mx-auto max-w-6xl py-8">
-          <div id="inviteInfo" className="flex mb-20">
+          <div id="inviteInfo" className="flex mb-20 md:flex-row flex-col">
             <div
-              className="w-1/2 flex justify-center items-center px-5"
+              className="md:w-1/2 flex justify-center items-center px-5"
               id="qrcode"
             >
               <QRCode value={qrUrl} />
             </div>
 
-            <div className="w-1/2 px-5 my-auto">
-              <div className="block">
-                <h4 className="font-bold mb-4 font-size-55" id="title">
-                  Album Invite Code
-                </h4>
+            <div className="md:w-1/2 px-5 my-auto block text-center md:text-left">
+              <h4 className="font-bold mb-4 md:mt-0 mt-16" id="title">
+                Album Invite Code
+              </h4>
 
-                <p
-                  style={{
-                    fontFamily: "'Courier New', ui-monospace",
-                  }}
-                  id="inviteCode"
-                  className="text-center py-2 px-5 bg-neutral-200 rounded-3xl uppercase font-light text-5xl mb-2"
-                >
-                  {inviteCode}
-                </p>
+              <p
+                style={{
+                  fontFamily: "'Courier New', ui-monospace",
+                }}
+                id="inviteCode"
+                className="text-center py-2 px-5 md:mx-0 mx-auto bg-neutral-200 rounded-3xl uppercase font-light text-5xl mb-2"
+              >
+                {inviteCode}
+              </p>
 
-                <p className="mb-6">
-                  Join the album by <b>entering the code</b> in the Echo Photos
-                  app. You can also <b>scan the QR code with your phone</b> if
-                  you have the app installed.
-                </p>
+              <p className="mb-6">
+                Join the album by <b>entering the code</b> in the Echo Photos
+                app. You can also <b>scan the QR code with your phone</b> if you
+                have the app installed.
+              </p>
 
-                <Button onClick={copyToClipboard}>Copy Code</Button>
-              </div>
+              <Button onClick={copyToClipboard} className="md:mx-0 mx-auto">
+                Copy Code
+              </Button>
             </div>
           </div>
 
-          <div className="flex">
-            <div className="w-1/2 px-5 my-auto">
+          <div className="flex md:flex-row flex-col text-center md:text-left">
+            <div className="md:w-1/2 px-5 my-auto">
               <div className="block">
                 <h1 className="font-bold mb-6" id="title">
                   Get Echo Photos
@@ -142,7 +142,7 @@ export default function InvitePage(inviteData: InviteData) {
                   Echo Photos App.
                 </p>
 
-                <div className="flex items-center">
+                <div className="flex justify-center md:justify-start items-center">
                   <AppStore />
 
                   <GooglePlay />
@@ -150,7 +150,7 @@ export default function InvitePage(inviteData: InviteData) {
               </div>
             </div>
 
-            <div className="w-1/2 px-5 flex items-center justify-center">
+            <div className="md:w-1/2 px-5 flex items-center justify-center">
               <img src="/images/AppIcon300.png" />
             </div>
           </div>
