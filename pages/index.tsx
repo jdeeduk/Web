@@ -222,7 +222,7 @@ export default function HomePage() {
       </section>
 
       <section id="desktop" className="py-24">
-        <div className={`${styles.sectionContainer} md:p-0 px-16`}>
+        <div className={`${styles.sectionContainer} lg:p-0 md:px-16`}>
           <div className="text-center pb-10">
             <h2 className="font-bold mb-4">Desktop</h2>
 
@@ -233,15 +233,15 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="flex md:flex-row flex-col text-center md:text-left">
+          <div className="flex md:flex-row flex-col text-center md:text-left mb-6 md:mb-0">
             <div className="md:w-1/2 justify-center items-center p-6">
               <img className="" src="images/browser.jpg" alt="" />
             </div>
 
             <div className="md:w-1/2 my-auto p-6 flex flex-col items-center md:block">
-              <h3 className="my-4">Echo Photos In Your Browser</h3>
+              <h3 className="mt-4 mb-2">Echo Photos In Your Browser</h3>
 
-              <p className="my-4">
+              <p className="mb-4">
                 Upload and download the photos directly from your computer
                 through the Echo Photos browser plugin.
               </p>
@@ -254,9 +254,9 @@ export default function HomePage() {
 
           <div className="flex md:flex-row flex-col text-center md:text-left">
             <div className="md:w-1/2 my-auto p-6 order-2 md:order-1 flex flex-col items-center md:block">
-              <h3 className="my-4">Client For MacOS</h3>
+              <h3 className="mt-4 mb-2">Client For MacOS</h3>
 
-              <p className="my-4">
+              <p className="mb-4">
                 Use Echo Photos through the macOS App on any Mac that uses the
                 same iCloud account as your iOS device. Currently, log-in is
                 only possible this way.
