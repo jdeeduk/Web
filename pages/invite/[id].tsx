@@ -8,6 +8,7 @@ import Button from '../../components/Button';
 import GooglePlay from '../../components/GooglePlay';
 import AppStore from '../../components/AppStore';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 export interface InviteData {
   albumImagePreviewURL?: string;
@@ -52,7 +53,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     props: {
       albumName: propsData.albumName ?? null,
       albumImagePreviewURL: propsData.albumImagePreviewURL ?? null,
-      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+      ...(await serverSideTranslations(locale ?? 'en', ['common', 'invite'])),
     },
   };
 };
@@ -62,19 +63,21 @@ export default function InvitePage(inviteData: InviteData) {
   const fullInviteId = router.query.id as string;
   const inviteCode = fullInviteId.substring(0, 8);
 
+  const { t } = useTranslation();
+
   const [qrUrl, setQrUrl] = useState('');
 
   useEffect(() => setQrUrl(window.location.href), []);
 
   const copyToClipboard = async () => {
     await navigator.clipboard.writeText(inviteCode);
-    alert('Copied to Clipboard!');
+    alert(t('invite:copied'));
   };
 
   return (
     <>
       <Head>
-        <title>Echo Photos - Invite to {inviteData.albumName}</title>
+        <title>{t('invite:head.title') + ' ' + inviteData.albumName}</title>
 
         <meta
           property="og:image"
@@ -85,13 +88,16 @@ export default function InvitePage(inviteData: InviteData) {
         />
         <meta
           property="og:title"
-          content={inviteData.albumName ?? 'Join Album'}
+          content={t('invite:head.title') + ' ' + inviteData.albumName}
         />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Echo Photos" />
         <meta
           property="og:description"
-          content="This link allows you to join an Echo Photos album."
+          content={
+            t('invite:head.description') ??
+            'This link allows you to join an Echo Photos album.'
+          }
         />
       </Head>
 
@@ -107,7 +113,7 @@ export default function InvitePage(inviteData: InviteData) {
 
             <div className="md:w-1/2 px-5 my-auto block text-center md:text-left">
               <h4 className="font-bold mb-4 md:mt-0 mt-16" id="title">
-                Album Invite Code
+                {t('invite:title')}
               </h4>
 
               <p
@@ -120,14 +126,10 @@ export default function InvitePage(inviteData: InviteData) {
                 {inviteCode}
               </p>
 
-              <p className="mb-6">
-                Join the album by <b>entering the code</b> in the Echo Photos
-                app. You can also <b>scan the QR code with your phone</b> if you
-                have the app installed.
-              </p>
+              <p className="mb-6">{t('invite:description')}</p>
 
               <Button onClick={copyToClipboard} className="md:mx-0 mx-auto">
-                Copy Code
+                {t('invite:copy-code')}
               </Button>
             </div>
           </div>
@@ -136,13 +138,10 @@ export default function InvitePage(inviteData: InviteData) {
             <div className="md:w-1/2 px-5 my-auto">
               <div className="block">
                 <h1 className="font-bold mb-6" id="title">
-                  Get Echo Photos
+                  {t('invite:download.title')}
                 </h1>
 
-                <p className="mb-6">
-                  The invite link you are trying to open can be opened with the
-                  Echo Photos App.
-                </p>
+                <p className="mb-6">{t('invite:download.description')}</p>
 
                 <div className="flex justify-center md:justify-start items-center">
                   <AppStore />
@@ -153,7 +152,10 @@ export default function InvitePage(inviteData: InviteData) {
             </div>
 
             <div className="md:w-1/2 px-5 flex items-center justify-center">
-              <img src="/images/AppIcon300.png" />
+              <img
+                src="/images/AppIcon300.png"
+                alt={t('invite:logo-alt-text') ?? ''}
+              />
             </div>
           </div>
         </div>
