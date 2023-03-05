@@ -192,36 +192,36 @@ export default function Home() {
               <img className="" src="images/group.png" alt="" />
             </div>
 
-            <div className="w-1/2 my-auto pr-4">
-              <h3 className="text-3xl my-2">Share Photos - Keep Forever</h3>
+            <div className="w-1/2 my-auto pr-6">
+              <h3 className="text-3xl my-4">Share Photos - Keep Forever</h3>
 
-              <p className="my-2">
+              <p className="my-1">
                 With Echo Photos, you'll get fast, simple and eternal photo
                 sharing. No subscription needed!
               </p>
 
-              <p className="my-2">
+              <p className="my-1">
                 Echo Photos is the best way to share pictures of a memorable day
                 with your friends.
               </p>
 
-              <p className="my-2">
+              <p className="my-1">
                 Safely store your pictures with Echo Photos' eternal storage.
               </p>
 
-              <p className="my-2">
+              <p className="my-1">
                 Like and comment your friends' pictures in your albums.
               </p>
             </div>
           </div>
 
-          <div className="mt-20 flex">
-            <div className="w-1/2 my-auto text-right pl-4">
-              <h3 className="text-3xl my-2">
+          <div className="mt-16 flex">
+            <div className="w-1/2 my-auto pl-6">
+              <h3 className="text-3xl my-4">
                 Premium Photos For Unforgettable Moments
               </h3>
 
-              <p className="my-2">
+              <p className="my-1">
                 Share pictures with hundreds of guests of events like weddings,
                 parties and other festivities. 🥳
               </p>
@@ -235,7 +235,7 @@ export default function Home() {
       </section>
 
       <section id="desktop" className="py-24">
-        <div className={`${styles.sectionContainer} px-4`}>
+        <div className={`${styles.sectionContainer}`}>
           <div className="text-center pb-10">
             <h2 className="font-bold mb-4">Desktop</h2>
 

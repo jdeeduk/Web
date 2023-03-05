@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontSize: {
         '4xl': ['2.5rem', { lineHeight: '3rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.375rem' }],
       },
     },
   },
