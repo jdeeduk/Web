@@ -3,7 +3,7 @@ import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-100 py-12 text-sm">
+    <footer className="bg-neutral-100 py-12 text-sm mt-auto">
       <div className="container mx-auto text-center flex flex-col items-center">
         <Link href="/" className="hover:underline mb-4">
           Echo Photos

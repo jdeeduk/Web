@@ -8,12 +8,20 @@
 
 html {
   @apply scroll-smooth;
+  @apply h-full;
 }
 
 body {
   @apply font-light;
   font-family: 'Helvetica', 'Arial', sans-serif;
   @apply antialiased;
+  @apply h-full;
+}
+
+#__next {
+  @apply h-full;
+  @apply flex;
+  @apply flex-col;
 }
 
 h1,

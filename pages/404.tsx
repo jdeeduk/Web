@@ -1,20 +1,20 @@
-export default () => {
+import { IconArrowLeft } from '@tabler/icons-react';
+import { useRouter } from 'next/router';
+import Button from '../components/Button';
+
+export default function ErrorPage() {
+  const router = useRouter();
+
   return (
-    <>
-      <section>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6 align-self-center text-center text-md-left">
-              <div className="block">
-                <h1 className="font-weight-bold mb-4 font-size-55">
-                  Error 404: This page does not exist.
-                </h1>
-                <p className="mb-4"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+    <div className="flex justify-center items-center text-center h-96 flex-col">
+      <h1 className="font-bold mb-4 text-5xl">
+        Error 404: This page does not exist.
+      </h1>
+
+      <Button onClick={router.back} className="mt-4">
+        <IconArrowLeft />
+        Go back
+      </Button>
+    </div>
   );
-};
+}

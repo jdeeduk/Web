@@ -8,6 +8,7 @@ import {
   IconUsers,
 } from '@tabler/icons-react';
 import Link from 'next/link';
+import Button from '../components/Button';
 import Feature from '../components/Feature';
 import styles from './Home.module.css';
 
@@ -260,9 +261,7 @@ export default function Home() {
               </p>
 
               <Link href="https://web.echophotos.io" target="_blank">
-                <button className="mt-4 text-white rounded-lg text-sm font-bold py-3 px-9 uppercase inline-block bg-blue-600 hover:bg-blue-500 focus:bg-blue-500">
-                  Open Web App
-                </button>
+                <Button className="mt-8">Open Web App</Button>
               </Link>
             </div>
           </div>
