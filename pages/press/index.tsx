@@ -1,8 +1,18 @@
 import { IoArrowDownCircleOutline } from "react-icons/io5";
+import { GetStaticPropsContext } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import Link from 'next/link';
 import Section from '../../components/Section';
 import styles from './press.module.css';
+
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+    },
+  };
+}
 
 export default function PressPage() {
   return (

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import QRCode from 'react-qr-code';
 import { useEffect, useState } from 'react';
@@ -8,6 +7,7 @@ import admin from 'firebase-admin';
 import Button from '../../components/Button';
 import GooglePlay from '../../components/GooglePlay';
 import AppStore from '../../components/AppStore';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export interface InviteData {
   albumImagePreviewURL?: string;
@@ -17,6 +17,7 @@ export interface InviteData {
 export const getServerSideProps: GetServerSideProps = async ({
   params,
   req,
+  locale,
 }) => {
   if (admin.apps.length == 0) {
     admin.initializeApp();
@@ -51,6 +52,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     props: {
       albumName: propsData.albumName ?? null,
       albumImagePreviewURL: propsData.albumImagePreviewURL ?? null,
+      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
     },
   };
 };
