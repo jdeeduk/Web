@@ -14,7 +14,7 @@ interface FeatureProps {
 export default function Feature({ icon, title, children }: FeatureProps) {
   return (
     <div>
-      <h4 className="flex font-bold items-center gap-2">
+      <h4 className="flex font-bold items-center md:justify-start justify-center gap-2">
         {icon}
 
         {title}

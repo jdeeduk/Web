@@ -19,9 +19,9 @@ export default function HomePage() {
     <>
       <section className="pt-5 pb-24">
         <div
-          className={`flex justify-center items-center ${styles.sectionContainer}`}
+          className={`flex md:flex-row flex-col justify-center text-center md:text-left items-center ${styles.sectionContainer}`}
         >
-          <div className="w-1/2 flex justify-center items-center px-2">
+          <div className="md:w-1/2 flex justify-center items-center px-2">
             <img
               src="images/title.png"
               alt="Three phones with demo views of the Echo Photos application."
@@ -29,7 +29,7 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="w-1/2 flex flex-col px-2">
+          <div className="md:w-1/2 flex flex-col px-2 md:mt-0 mt-10">
             <h1 className="font-bold mb-6">
               Full-Res. Simple. Supreme Photo Albums
             </h1>
@@ -40,7 +40,7 @@ export default function HomePage() {
               everlasting memories!
             </p>
 
-            <div className="flex items-center">
+            <div className="flex items-center justify-center md:justify-start">
               <AppStore />
 
               <GooglePlay />
@@ -51,11 +51,11 @@ export default function HomePage() {
 
       <section className="pt-24 pb-40" id="features">
         <div
-          className={`flex flex-col items-center ${styles.sectionContainer} px-4`}
+          className={`flex flex-col items-center text-center md:text-left ${styles.sectionContainer} px-4`}
         >
-          <h2 className="font-bold mb-6">Unlimited Memories</h2>
+          <h2 className="font-bold mb-10 md:mb-6">Unlimited Memories</h2>
 
-          <div className="grid grid-rows-3 grid-cols-3 grid-flow-col gap-y-4">
+          <div className="md:grid flex flex-col grid-rows-3 grid-cols-3 grid-flow-col gap-10 md:gap-y-4">
             <Feature icon={<IconPhotoUp />} title="Full resolution">
               Share your photos in full resolution in their original quality.
             </Feature>
@@ -71,7 +71,7 @@ export default function HomePage() {
               are Premium for free!
             </Feature>
 
-            <div className="row-span-3 my-auto">
+            <div className="row-span-3 my-auto mx-auto">
               <img
                 src="images/iphone.png"
                 alt="Phone with a demo view of the EchoPhotos app."
@@ -98,18 +98,20 @@ export default function HomePage() {
       </section>
 
       <section className="bg-zinc-800 py-20">
-        <div className={`${styles.sectionContainer} flex`}>
-          <div className="w-1/2 flex items-center justify-center">
+        <div
+          className={`${styles.sectionContainer} flex md:flex-row flex-col items-center text-center md:text-left`}
+        >
+          <div className="md:w-1/2 flex items-center justify-center">
             <img
               src="images/groups.png"
               alt="Phone with a demo view of the Groups feature."
             />
           </div>
 
-          <div className="w-1/2 my-auto pr-4">
+          <div className="md:w-1/2 my-auto px-4">
             <h3 className="text-white">Say no to Tracking!</h3>
 
-            <h2 className="font-bold text-white mb-2.5 flex gap-2 items-center">
+            <h2 className="font-bold text-white mb-2.5 flex text-[2.25rem] gap-2 items-center justify-center md:justify-start">
               Premium Privacy
               <IconLock color="white" size={30} />
             </h2>
@@ -140,23 +142,25 @@ export default function HomePage() {
       </section>
 
       <section className="py-24">
-        <div className={`${styles.sectionContainer} flex`}>
-          <div className="w-1/2 text-right my-auto">
+        <div
+          className={`${styles.sectionContainer} flex md:flex-row flex-col items-center`}
+        >
+          <div className="md:w-1/2 text-center md:text-right my-auto px-6">
             <h3 className="text-green-700">Care for the Climate</h3>
 
-            <h2 className="font-bold mb-2.5 flex items-center gap-2 text-green-700 justify-end">
+            <h2 className="font-bold mb-4 flex items-center gap-2 text-[2.25rem] text-green-700 justify-center md:justify-end">
               <IconLeaf className="-scale-x-100" size={32} />
               Carbon Neutral
             </h2>
 
-            <p className="my-1">Our servers run entirely carbon-neutral.</p>
+            <p className="mb-1">Our servers run entirely carbon-neutral.</p>
 
-            <p className="my-1">
+            <p className="mb-4">
               Plus, we are committed to be completely carbon-free by 2030.
             </p>
           </div>
 
-          <div className="w-1/2 flex justify-center items-center">
+          <div className="md:w-1/2 flex justify-center items-center px-6">
             <img
               className=""
               src="https://source.unsplash.com/eluzJSfkNCk/400x600"
@@ -170,12 +174,12 @@ export default function HomePage() {
         <div className={styles.sectionContainer}>
           <h2 className="font-bold mb-6 text-center">Shared Albums</h2>
 
-          <div className="flex">
-            <div className="w-1/2 flex justify-center items-center">
+          <div className="flex md:flex-row flex-col items-center text-center md:text-left">
+            <div className="md:w-1/2 flex justify-center items-center">
               <img className="" src="images/group.png" alt="" />
             </div>
 
-            <div className="w-1/2 my-auto pr-6">
+            <div className="md:w-1/2 my-auto px-6">
               <h3 className="text-3xl my-4">Share Photos - Keep Forever</h3>
 
               <p className="my-1">
@@ -198,8 +202,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-16 flex">
-            <div className="w-1/2 my-auto pl-6">
+          <div className="mt-16 flex md:flex-row flex-col text-center md:text-left">
+            <div className="md:w-1/2 my-auto px-6 order-2 md:order-1">
               <h3 className="text-3xl my-4">
                 Premium Photos For Unforgettable Moments
               </h3>
@@ -210,7 +214,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="w-1/2 flex justify-center items-center">
+            <div className="md:w-1/2 flex justify-center items-center order-1 md:order-2">
               <img className="" src="images/image.png" alt="" />
             </div>
           </div>
@@ -218,7 +222,7 @@ export default function HomePage() {
       </section>
 
       <section id="desktop" className="py-24">
-        <div className={`${styles.sectionContainer}`}>
+        <div className={`${styles.sectionContainer} md:p-0 px-16`}>
           <div className="text-center pb-10">
             <h2 className="font-bold mb-4">Desktop</h2>
 
@@ -229,12 +233,12 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="flex">
-            <div className="w-1/2 justify-center items-center p-6">
+          <div className="flex md:flex-row flex-col text-center md:text-left">
+            <div className="md:w-1/2 justify-center items-center p-6">
               <img className="" src="images/browser.jpg" alt="" />
             </div>
 
-            <div className="w-1/2 my-auto p-6">
+            <div className="md:w-1/2 my-auto p-6 flex flex-col items-center md:block">
               <h3 className="my-4">Echo Photos In Your Browser</h3>
 
               <p className="my-4">
@@ -243,13 +247,13 @@ export default function HomePage() {
               </p>
 
               <Link href="https://web.echophotos.io" target="_blank">
-                <Button className="mt-8">Open Web App</Button>
+                <Button>Open Web App</Button>
               </Link>
             </div>
           </div>
 
-          <div className="flex">
-            <div className="w-1/2 my-auto p-6">
+          <div className="flex md:flex-row flex-col text-center md:text-left">
+            <div className="md:w-1/2 my-auto p-6 order-2 md:order-1 flex flex-col items-center md:block">
               <h3 className="my-4">Client For MacOS</h3>
 
               <p className="my-4">
@@ -261,7 +265,7 @@ export default function HomePage() {
               <AppStore mac />
             </div>
 
-            <div className="w-1/2 flex justify-center items-center p-6">
+            <div className="md:w-1/2 flex justify-center items-center p-6 order-1 md:order-2">
               <img className="" src="images/macOS.jpg" alt="" />
             </div>
           </div>

@@ -9,7 +9,7 @@ export default function Footer() {
           Echo Photos
         </Link>
 
-        <ul className="flex gap-6 mt-4">
+        <ul className="flex gap-x-6 gap-y-3 mt-4 flex-wrap justify-center px-10">
           <li>
             <Link className={styles.footerLink} href="/">
               Home
