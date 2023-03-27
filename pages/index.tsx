@@ -1,12 +1,12 @@
 import {
-  IconAccessPoint,
-  IconDiscountCheck,
-  IconLeaf,
-  IconLock,
-  IconPhotoUp,
-  IconStar,
-  IconUsers,
-} from '@tabler/icons-react';
+  IoLockClosed,
+  IoLeaf,
+  IoImages,
+  IoStar,
+  IoRadioOutline,
+  IoPeople,
+  IoSparkles,
+} from "react-icons/io5";
 import Link from 'next/link';
 import AppStore from '../components/AppStore';
 import Button from '../components/Button';
@@ -56,16 +56,16 @@ export default function HomePage() {
           <h2 className="font-bold mb-10 md:mb-6">Unlimited Memories</h2>
 
           <div className="md:grid flex flex-col grid-rows-3 grid-cols-3 grid-flow-col gap-10 md:gap-y-4">
-            <Feature icon={<IconPhotoUp />} title="Full resolution">
+            <Feature icon={<IoImages />} title="Full resolution">
               Share your photos in full resolution in their original quality.
             </Feature>
 
-            <Feature icon={<IconLock />} title="Premium privacy">
+            <Feature icon={<IoLockClosed />} title="Premium privacy">
               No ads, no tracking and secure storage: the advantages of an
               independent company benefit everyone.
             </Feature>
 
-            <Feature icon={<IconStar />} title="Free for the first year">
+            <Feature icon={<IoStar />} title="Free for the first year">
               No subscriptions, no storage limits: Premium features are paid
               once and kept forever. During the first year of usage, all albums
               are Premium for free!
@@ -78,18 +78,18 @@ export default function HomePage() {
               />
             </div>
 
-            <Feature icon={<IconAccessPoint />} title="AirDrop, but for groups">
+            <Feature icon={<IoRadioOutline />} title="AirDrop, but for groups">
               Apart from Android support, Echo Photos has many advantages
               compared to AirDrop. With smart download tools, do never
               accidentally download your photos again!
             </Feature>
 
-            <Feature icon={<IconDiscountCheck />} title="Refined design">
+            <Feature icon={<IoSparkles />} title="Refined design">
               A carefully crafted app: Simple and yet feature-rich, letting you
               focus on what you want to do.
             </Feature>
 
-            <Feature icon={<IconUsers />} title="Social sharing">
+            <Feature icon={<IoPeople />} title="Social sharing">
               Comments and likes for your group images: Echo provides a private
               social network experience. For real friends only.
             </Feature>
@@ -113,7 +113,7 @@ export default function HomePage() {
 
             <h2 className="font-bold text-white mb-2.5 flex text-[2.25rem] gap-2 items-center justify-center md:justify-start">
               Premium Privacy
-              <IconLock color="white" size={30} />
+              <IoLockClosed color="white" size={30} />
             </h2>
 
             <p className={styles.privacyText}>
@@ -149,7 +149,7 @@ export default function HomePage() {
             <h3 className="text-green-700">Care for the Climate</h3>
 
             <h2 className="font-bold mb-4 flex items-center gap-2 text-[2.25rem] text-green-700 justify-center md:justify-end">
-              <IconLeaf className="-scale-x-100" size={32} />
+              <IoLeaf className="-scale-x-100" size={32} />
               Carbon Neutral
             </h2>
 

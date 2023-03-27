@@ -1,4 +1,4 @@
-import { IconMenu, IconX } from '@tabler/icons-react';
+import { IoMenu, IoClose } from "react-icons/io5";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
@@ -27,7 +27,7 @@ export default () => {
         </Link>
 
         <button className="md:hidden" onClick={toggleOpen}>
-          {isOpen ? <IconX /> : <IconMenu />}
+          {isOpen ? <IoClose size={30} /> : <IoMenu size={30} />}
         </button>
 
         <div className={`absolute top-20 left-0 px-6 pb-3 ${isOpen ? 'bg-white/70 backdrop-blur-md' : 'hidden' } w-full md:p-0 md:w-auto md:mr-2 md:top-0 md:relative md:block`} >

@@ -1,6 +1,6 @@
-import { IconArrowLeft } from '@tabler/icons-react';
 import { useRouter } from 'next/router';
-import Button from '../components/Button';
+import Button from '../components/Button'; 
+import { IoArrowBack } from "react-icons/io5";
 
 export default function ErrorPage() {
   const router = useRouter();
@@ -12,7 +12,7 @@ export default function ErrorPage() {
       </h1>
 
       <Button onClick={router.back} className="mt-4">
-        <IconArrowLeft />
+        <IoArrowBack />
         Go back
       </Button>
     </div>

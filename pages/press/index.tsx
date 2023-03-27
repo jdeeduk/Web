@@ -1,4 +1,4 @@
-import { IconDownload } from '@tabler/icons-react';
+import { IoArrowDownCircleOutline } from "react-icons/io5";
 import Head from 'next/head';
 import Link from 'next/link';
 import Section from '../../components/Section';
@@ -22,7 +22,7 @@ export default function PressPage() {
           className={styles.link}
           target="_blank"
         >
-          <IconDownload size={20} />
+          <IoArrowDownCircleOutline size={20} />
           Download Press Kit
         </Link>
 
@@ -31,7 +31,7 @@ export default function PressPage() {
           className={styles.link}
           target="_blank"
         >
-          <IconDownload size={20} />
+          <IoArrowDownCircleOutline size={20} />
           Download Flyer
         </Link>
       </Section>
