@@ -64,8 +64,8 @@ export default function InvitePage(inviteData: InviteData) {
 
   useEffect(() => setQrUrl(window.location.href), []);
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(inviteCode);
+  const copyToClipboard = async () => {
+    await navigator.clipboard.writeText(inviteCode);
     alert('Copied to Clipboard!');
   };
 
