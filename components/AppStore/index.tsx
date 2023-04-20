@@ -22,7 +22,6 @@ export default function AppStore({ mac }: AppStoreProps) {
       <img
         src="/images/AppStore.svg"
         height="40"
-        width="120"
         alt="Get Echo from the App Store"
       />
     </Link>
