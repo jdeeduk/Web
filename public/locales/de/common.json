@@ -1,0 +1,23 @@
+{
+  "navbar": {
+    "features": "Features",
+    "albums": "Albums",
+    "desktop": "Desktop",
+    "download": "Download"
+  },
+  "footer": {
+    "home": "Home",
+    "albums": "Alben",
+    "webapp": "Web App",
+    "instagram": "Instagram",
+    "download": "Download",
+    "privacy": "Datenschutz",
+    "press": "Medien",
+    "copyright": {
+      "text-before": "Copyright",
+      "rights": "All rights reserved."
+    },
+    "bottom-text": "Coded with ❤️ in 🇨🇭"
+  },
+  "go-back": "Go back"
+}
