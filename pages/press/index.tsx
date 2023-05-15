@@ -1,31 +1,21 @@
 import { IoArrowDownCircleOutline } from "react-icons/io5";
-import { GetStaticPropsContext } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
 import Section from '../../components/Section';
 import styles from './press.module.css';
 
-export async function getStaticProps({ locale }: GetStaticPropsContext) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? 'en', ['common', 'press'])),
-    },
-  };
-}
-
 export default function PressPage() {
-  const { t } = useTranslation();
-
   return (
     <>
       <Head>
-        <title>{t('press:head.title')}</title>
+        <title>Echo Photos - Press</title>
       </Head>
 
-      <Section title={t('press:title')}>
-        <p className="mb-4">{t('press:description')}</p>
+      <Section title="Press">
+        <p className="mb-4">
+          We have a collection of images in a press kit as well as a flyer
+          containing the most important data of Echo Photos.
+        </p>
 
         <Link
           href="https://drive.google.com/file/d/1PBWO5sMAmvOZXWJRvTqc7jXGNEVen-vp/view?usp=sharing"
@@ -33,7 +23,7 @@ export default function PressPage() {
           target="_blank"
         >
           <IoArrowDownCircleOutline size={20} />
-          {t('press:kit')}
+          Download Press Kit
         </Link>
 
         <Link
@@ -42,7 +32,7 @@ export default function PressPage() {
           target="_blank"
         >
           <IoArrowDownCircleOutline size={20} />
-          {t('press:flyer')}
+          Download Flyer
         </Link>
       </Section>
     </>

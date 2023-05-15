@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import QRCode from 'react-qr-code';
 import { useEffect, useState } from 'react';
@@ -7,8 +8,6 @@ import admin from 'firebase-admin';
 import Button from '../../components/Button';
 import GooglePlay from '../../components/GooglePlay';
 import AppStore from '../../components/AppStore';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
 
 export interface InviteData {
   albumImagePreviewURL?: string;
@@ -18,7 +17,6 @@ export interface InviteData {
 export const getServerSideProps: GetServerSideProps = async ({
   params,
   req,
-  locale,
 }) => {
   if (admin.apps.length == 0) {
     admin.initializeApp();
@@ -53,7 +51,6 @@ export const getServerSideProps: GetServerSideProps = async ({
     props: {
       albumName: propsData.albumName ?? null,
       albumImagePreviewURL: propsData.albumImagePreviewURL ?? null,
-      ...(await serverSideTranslations(locale ?? 'en', ['common', 'invite'])),
     },
   };
 };
@@ -63,21 +60,19 @@ export default function InvitePage(inviteData: InviteData) {
   const fullInviteId = router.query.id as string;
   const inviteCode = fullInviteId.substring(0, 8);
 
-  const { t } = useTranslation();
-
   const [qrUrl, setQrUrl] = useState('');
 
   useEffect(() => setQrUrl(window.location.href), []);
 
   const copyToClipboard = async () => {
     await navigator.clipboard.writeText(inviteCode);
-    alert(t('invite:copied'));
+    alert('Copied to Clipboard!');
   };
 
   return (
     <>
       <Head>
-        <title>{t('invite:head.title') + ' ' + inviteData.albumName}</title>
+        <title>Echo Photos - Invite to {inviteData.albumName}</title>
 
         <meta
           property="og:image"
@@ -88,16 +83,13 @@ export default function InvitePage(inviteData: InviteData) {
         />
         <meta
           property="og:title"
-          content={t('invite:head.title') + ' ' + inviteData.albumName}
+          content={inviteData.albumName ?? 'Join Album'}
         />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Echo Photos" />
         <meta
           property="og:description"
-          content={
-            t('invite:head.description') ??
-            'This link allows you to join an Echo Photos album.'
-          }
+          content="This link allows you to join an Echo Photos album."
         />
       </Head>
 
@@ -113,7 +105,7 @@ export default function InvitePage(inviteData: InviteData) {
 
             <div className="md:w-1/2 px-5 my-auto block text-center md:text-left">
               <h4 className="font-bold mb-4 md:mt-0 mt-16" id="title">
-                {t('invite:title')}
+                Album Invite Code
               </h4>
 
               <p
@@ -126,10 +118,14 @@ export default function InvitePage(inviteData: InviteData) {
                 {inviteCode}
               </p>
 
-              <p className="mb-6">{t('invite:description')}</p>
+              <p className="mb-6">
+                Join the album by <b>entering the code</b> in the Echo Photos
+                app. You can also <b>scan the QR code with your phone</b> if you
+                have the app installed.
+              </p>
 
               <Button onClick={copyToClipboard} className="md:mx-0 mx-auto">
-                {t('invite:copy-code')}
+                Copy Code
               </Button>
             </div>
           </div>
@@ -138,10 +134,13 @@ export default function InvitePage(inviteData: InviteData) {
             <div className="md:w-1/2 px-5 my-auto">
               <div className="block">
                 <h1 className="font-bold mb-6" id="title">
-                  {t('invite:download.title')}
+                  Get Echo Photos
                 </h1>
 
-                <p className="mb-6">{t('invite:download.description')}</p>
+                <p className="mb-6">
+                  The invite link you are trying to open can be opened with the
+                  Echo Photos App.
+                </p>
 
                 <div className="flex justify-center md:justify-start items-center">
                   <AppStore />
@@ -152,10 +151,7 @@ export default function InvitePage(inviteData: InviteData) {
             </div>
 
             <div className="md:w-1/2 px-5 flex items-center justify-center">
-              <img
-                src="/images/AppIcon300.png"
-                alt={t('invite:logo-alt-text') ?? ''}
-              />
+              <img src="/images/AppIcon300.png" />
             </div>
           </div>
         </div>
