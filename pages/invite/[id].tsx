@@ -8,6 +8,7 @@ import admin from 'firebase-admin';
 import Button from '../../components/Button';
 import GooglePlay from '../../components/GooglePlay';
 import AppStore from '../../components/AppStore';
+import WebApp from '../../components/WebApp';
 
 export interface InviteData {
   albumImagePreviewURL?: string;
@@ -124,7 +125,7 @@ export default function InvitePage(inviteData: InviteData) {
                 have the app installed.
               </p>
 
-              <Button onClick={copyToClipboard} className="md:mx-0 mx-auto">
+              <Button onClick={copyToClipboard} className="mx-0">
                 Copy Code
               </Button>
             </div>
@@ -144,8 +145,8 @@ export default function InvitePage(inviteData: InviteData) {
 
                 <div className="flex justify-center md:justify-start items-center">
                   <AppStore />
-
                   <GooglePlay />
+                  <WebApp inviteId="{fullInviteId}" />
                 </div>
               </div>
             </div>
