@@ -110,11 +110,8 @@ export default function InvitePage(inviteData: InviteData) {
               </h4>
 
               <p
-                style={{
-                  fontFamily: "'Courier New', ui-monospace",
-                }}
                 id="inviteCode"
-                className="text-center py-2 px-5 md:mx-0 mx-auto bg-neutral-200 rounded-3xl uppercase font-light text-5xl mb-2"
+                className="font-mono text-center py-2 px-5 md:mx-0 mx-auto bg-neutral-200 rounded-xl uppercase font-light text-5xl mb-2"
               >
                 {inviteCode}
               </p>
