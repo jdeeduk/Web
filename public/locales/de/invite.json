@@ -1,15 +1,15 @@
 {
   "head": {
-    "title": "Echo Photos - Invite to",
-    "description": "This link allows you to join an Echo Photos album."
+    "title": "Echo Photos - Einladunf für",
+    "description": "Dieser Link erlaubt es dir dem Echo Photos Album beizutreten."
   },
-  "copied": "Copied to clipboard!",
-  "title": "Album Invite Code",
-  "description": "Join the album by entering the code in the Echo Photos app. You can also scan the QR code with your phone if you have the app installed.",
-  "copy-code": "Copy Code",
+  "copied": "In die Ablage kopiert!",
+  "title": "Einladungs-Code für Album",
+  "description": "Trete dem Album bei indem du den Code in der Echo Photos App eingibst. Du kannst auch den QR-code mit deinem Mobiltelefon scannen, falls du die App bereits installiert hast.",
+  "copy-code": "Code Kopieren",
   "download": {
-    "title": "Get Echo Photos",
-    "description": "The invite link you are trying to open can be opened with the Echo Photos App."
+    "title": "Hole dir Echo Photos",
+    "description": "Der Einladungslink den du zu Öffnen versuchst kann mit der Echo Photos App geöffnet werden."
   },
-  "logo-alt-text": "Echo Photos logo."
+  "logo-alt-text": "Echo Photos"
 }
