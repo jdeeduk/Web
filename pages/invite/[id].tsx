@@ -129,10 +129,6 @@ export default function InvitePage(inviteData: InviteData) {
               <Button onClick={copyToClipboard} className="mx-0">
                 {t('invite:copy-code')}
               </Button>
-
-              <Button onClick={copyToClipboard} className="mx-0">
-                Open in Web App
-              </Button>
             </div>
           </div>
 
