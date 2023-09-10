@@ -33,7 +33,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     domain = 'https://echo-photos-dev.web.app';
   }
 
-  const reqURL = `${domain}/api/invite?id=${inviteId}`;
+  const reqURL = `${domain}/api/v1/invites/${inviteId}`;
 
   let propsData: InviteData = {};
 
@@ -42,21 +42,25 @@ export const getServerSideProps: GetServerSideProps = async ({
     const invite = await res.json();
 
     propsData.albumName = invite?.groupName;
-    const groupImage = invite?.groupImage;
-    if (groupImage !== undefined) {
-      propsData.albumImagePreviewURL = `${domain}/api/image-preview?id=${groupImage}`;
-    }
+    propsData.albumImagePreviewURL = `${domain}/api/v1/invites/${invite.id}/image`;
+
+    return {
+      props: {
+        albumName: propsData.albumName,
+        albumImagePreviewURL: propsData.albumImagePreviewURL,
+        ...(await serverSideTranslations(locale ?? 'en', ['common', 'invite'])),
+      },
+    };
   } catch (e) {
     console.error(e);
+    return {
+      props: {
+        albumName: 'New Album Invite',
+        albumImagePreviewURL: `${domain}/images/AppIcon300.png`,
+        ...(await serverSideTranslations(locale ?? 'en', ['common', 'invite'])),
+      },
+    };
   }
-
-  return {
-    props: {
-      albumName: propsData.albumName ?? null,
-      albumImagePreviewURL: propsData.albumImagePreviewURL ?? null,
-      ...(await serverSideTranslations(locale ?? 'en', ['common', 'invite'])),
-    },
-  };
 };
 
 export default function InvitePage(inviteData: InviteData) {
@@ -78,7 +82,7 @@ export default function InvitePage(inviteData: InviteData) {
   return (
     <>
       <Head>
-        <title>{t('invite:head.title') + ' ' + inviteData.albumName}</title>
+        <title>{'Echo Photos - ' + inviteData.albumName ?? t('invite:albumInvite') ?? 'Album Invite'}</title>
 
         <meta
           property="og:image"
@@ -89,15 +93,15 @@ export default function InvitePage(inviteData: InviteData) {
         />
         <meta
           property="og:title"
-          content={t('invite:head.title') + ' ' + inviteData.albumName}
+          content={inviteData.albumName ?? t('invite:albumInvite') ?? 'Album Invite'}
         />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Echo Photos" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:site_name" content="Echo Photos"/>
         <meta
           property="og:description"
           content={
-            t('invite:head.description') ??
-            'This link allows you to join an Echo Photos album.'
+            t('invite:social-preview.description') ??
+            'Join the album!'
           }
         />
       </Head>
@@ -152,7 +156,7 @@ export default function InvitePage(inviteData: InviteData) {
             <div className="md:w-1/2 px-5 flex items-center justify-center">
               <img
                 src="/images/AppIcon300.png"
-                alt={t('invite:logo-alt-text') ?? ''}
+                alt="Echo Photos"
               />
             </div>
           </div>

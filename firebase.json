@@ -8,16 +8,6 @@
     ],
     "rewrites": [
       {
-        "source": "/api/invite",
-        "function": "getInviteData",
-        "region": "us-central1"
-      },
-      {
-        "source": "/api/image-preview",
-        "function": "imagePreview",
-        "region": "us-central1"
-      },
-      {
         "source": "/api/v1{,/**}",
         "function": "apiV1",
         "region": "europe-west6"

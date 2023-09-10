@@ -1,15 +1,14 @@
 {
-  "head": {
-    "title": "Echo Photos - Einladunf für",
-    "description": "Dieser Link erlaubt es dir dem Echo Photos Album beizutreten."
+  "social-preview": {
+    "description": "Albumeinladung"
   },
   "copied": "In die Ablage kopiert!",
   "title": "Einladungs-Code für Album",
+  "albumInvite": "Album-Einladung",
   "description": "Trete dem Album bei indem du den Code in der Echo Photos App eingibst. Du kannst auch den QR-code mit deinem Mobiltelefon scannen, falls du die App bereits installiert hast.",
   "copy-code": "Code Kopieren",
   "download": {
     "title": "Hole dir Echo Photos",
     "description": "Der Einladungslink den du zu Öffnen versuchst kann mit der Echo Photos App geöffnet werden."
-  },
-  "logo-alt-text": "Echo Photos"
+  }
 }
