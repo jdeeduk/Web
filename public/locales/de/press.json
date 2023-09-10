@@ -1,9 +1,9 @@
 {
   "head": {
-    "title": "Echo Photos - Press"
+    "title": "Echo Photos - Medien"
   },
-  "title": "Press",
-  "description": "We have a collection of images in a press kit as well as a flyer containing the most important data of Echo Photos.",
-  "kit": "Download Press Kit",
-  "flyer": "Download Flyer"
+  "title": "Medien",
+  "description": "Wir haben eine Bildersammlung in einer Pressemappe sowie einen Flyer mit den wichtigsten Daten von Echo Photos.",
+  "kit": "Pressemappe herunterladen",
+  "flyer": "Flyer herunterladen"
 }

@@ -1,16 +1,16 @@
 {
   "navbar": {
-    "features": "Features",
-    "albums": "Albums",
+    "features": "Funktionen",
+    "albums": "Alben",
     "desktop": "Desktop",
-    "download": "Download"
+    "download": "Herunterladen"
   },
   "footer": {
     "home": "Home",
     "albums": "Alben",
     "webapp": "Web App",
     "instagram": "Instagram",
-    "download": "Download",
+    "download": "Herunterladen",
     "privacy": "Datenschutz",
     "press": "Medien",
     "copyright": {
