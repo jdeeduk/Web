@@ -14,10 +14,10 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`text-white rounded-lg text-sm
-	font-bold py-3 px-9 uppercase flex gap-2 items-center
-	bg-blue-600 hover:bg-blue-500 focus:bg-blue-500 ${className}
-	`}
+      className={`
+      text-white rounded-lg font-bold py-3 px-4 uppercase
+      flex gap-2 items-center bg-[#0071e3] hover:bg-[#0077ED]
+      focus:bg-[#0077ED] ${className}`}
       {...other}
     >
       {icon ?? null}
