@@ -16,6 +16,7 @@ import GooglePlay from '../components/GooglePlay';
 import styles from './Home.module.css';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import ContentBox from "../components/ContentBox";
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
@@ -174,7 +175,6 @@ export default function HomePage() {
 
           <div className="md:w-1/2 flex justify-center items-center px-6">
             <img
-              className=""
               src="https://source.unsplash.com/eluzJSfkNCk/400x600"
               alt={t('home:climate.image-alt-text') ?? ''}
             />
@@ -188,18 +188,13 @@ export default function HomePage() {
             {t('home:albums.title')}
           </h2>
 
-          <div className="flex md:flex-row flex-col items-center text-center md:text-left">
-            <div className="md:w-1/2 flex justify-center items-center">
-              <img
-                src="images/group.png"
-                alt={t('home:albums.sections.0.image-alt-text') ?? ''}
-              />
-            </div>
+          <ContentBox
+            left = {true}
+            imageURL="images/group.png"
+            imageAltText={t('home:albums.sections.0.image-alt-text') ?? ''}
+            title={t('home:albums.sections.0.title')}
+          >
 
-            <div className="md:w-1/2 my-auto px-6">
-              <h3 className="text-3xl my-4">
-                {t('home:albums.sections.0.title')}
-              </h3>
 
               <p className="my-1">{t('home:albums.sections.0.paragraphs.0')}</p>
 
@@ -208,26 +203,16 @@ export default function HomePage() {
               <p className="my-1">{t('home:albums.sections.0.paragraphs.2')}</p>
 
               <p className="my-1">{t('home:albums.sections.0.paragraphs.3')}</p>
-            </div>
-          </div>
+          </ContentBox>
 
-          <div className="mt-16 flex md:flex-row flex-col text-center md:text-left">
-            <div className="md:w-1/2 my-auto px-6 order-2 md:order-1">
-              <h3 className="text-3xl my-4">
-                {t('home:albums.sections.1.title')}
-              </h3>
-
+          <ContentBox
+            left = {false}
+            imageURL="images/image.png"
+            imageAltText={t('home:albums.sections.1.image-alt-text') ?? ''}
+            title={t('home:albums.sections.1.title')}
+          >
               <p className="my-1">{t('home:albums.sections.1.description')}</p>
-            </div>
-
-            <div className="md:w-1/2 flex justify-center items-center order-1 md:order-2">
-              <img
-                className=""
-                src="images/image.png"
-                alt={t('home:albums.sections.1.image-alt-text') ?? ''}
-              />
-            </div>
-          </div>
+          </ContentBox>
         </div>
       </section>
 
@@ -241,47 +226,29 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="flex md:flex-row flex-col text-center md:text-left mb-6 md:mb-0">
-            <div className="md:w-1/2 justify-center items-center p-6">
-              <img
-                className=""
-                src="images/browser.jpg"
-                alt={t('home:desktop.sections.0.image-alt-text') ?? ''}
-              />
-            </div>
+          <ContentBox
+            left = {true}
+            imageURL="images/browser.jpg"
+            imageAltText={t('home:desktop.sections.0.image-alt-text') ?? ''}
+            title={t('home:desktop.sections.0.title')}
+          >
+            <p className="mb-4">{t('home:desktop.sections.0.description')}</p>
 
-            <div className="md:w-1/2 my-auto p-6 flex flex-col items-center md:block">
-              <h3 className="mt-4 md:mt-0 mb-2">
-                {t('home:desktop.sections.0.title')}
-              </h3>
+            <Link href="https://web.echophotos.io" target="_blank">
+              <Button>{t('home:desktop.sections.0.open-web-app')}</Button>
+            </Link>
+          </ContentBox>
 
-              <p className="mb-4">{t('home:desktop.sections.0.description')}</p>
+          <ContentBox
+            left = {false}
+            imageURL="images/macOS.jpg"
+            imageAltText={t('home:desktop.sections.1.image-alt-text') ?? ''}
+            title={t('home:desktop.sections.1.title')}
+          >
+            <p className="mb-4">{t('home:desktop.sections.1.description')}</p>
 
-              <Link href="https://web.echophotos.io" target="_blank">
-                <Button>{t('home:desktop.sections.0.open-web-app')}</Button>
-              </Link>
-            </div>
-          </div>
-
-          <div className="flex md:flex-row flex-col text-center md:text-left">
-            <div className="md:w-1/2 my-auto p-6 order-2 md:order-1 flex flex-col items-center md:block">
-              <h3 className="mt-4 mb-2">
-                {t('home:desktop.sections.1.title')}
-              </h3>
-
-              <p className="mb-4">{t('home:desktop.sections.1.description')}</p>
-
-              <AppStore mac />
-            </div>
-
-            <div className="md:w-1/2 flex justify-center items-center p-6 order-1 md:order-2">
-              <img
-                className=""
-                src="images/macOS.jpg"
-                alt={t('home:desktop.sections.1.image-alt-text') ?? ''}
-              />
-            </div>
-          </div>
+            <AppStore mac />
+          </ContentBox>
         </div>
       </section>
     </>
