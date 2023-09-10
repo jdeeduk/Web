@@ -9,10 +9,10 @@ import {
 } from "react-icons/io5";
 import { GetStaticPropsContext } from 'next';
 import Link from 'next/link';
-import AppStore from '../components/AppStore';
+import AppStore from '../components/Badges/AppStore';
 import Button from '../components/Button';
 import Feature from '../components/Feature';
-import GooglePlay from '../components/GooglePlay';
+import GooglePlay from '../components/Badges/GooglePlay';
 import styles from './Home.module.css';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';

@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react';
 import { GetServerSideProps } from 'next';
 import admin from 'firebase-admin';
 import Button from '../../components/Button';
-import GooglePlay from '../../components/GooglePlay';
-import AppStore from '../../components/AppStore';
-import WebApp from '../../components/WebApp';
+import GooglePlay from '../../components/Badges/GooglePlay';
+import AppStore from '../../components/Badges/AppStore';
+import WebApp from '../../components/Badges/WebApp';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
