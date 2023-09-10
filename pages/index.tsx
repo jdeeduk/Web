@@ -11,7 +11,7 @@ import { GetStaticPropsContext } from 'next';
 import Link from 'next/link';
 import AppStore from '../components/Badges/AppStore';
 import Button from '../components/Button';
-import Feature from '../components/Feature';
+import Featurette from '../components/Featurette';
 import GooglePlay from '../components/Badges/GooglePlay';
 import styles from './Home.module.css';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -66,26 +66,26 @@ export default function HomePage() {
           </h2>
 
           <div className="md:grid flex flex-col grid-rows-3 grid-cols-3 grid-flow-col gap-10 md:gap-y-4">
-            <Feature
+            <Featurette
               icon={<IoImages />}
               title={t('home:features.list.0.title')}
             >
               {t('home:features.list.0.description')}
-            </Feature>
+            </Featurette>
 
-            <Feature
+            <Featurette
               icon={<IoLockClosed />}
               title={t('home:features.list.1.title')}
             >
               {t('home:features.list.1.description')}
-            </Feature>
+            </Featurette>
 
-            <Feature
+            <Featurette
               icon={<IoStar />}
               title={t('home:features.list.2.title')}
             >
               {t('home:features.list.2.description')}
-            </Feature>
+            </Featurette>
 
             <div className="row-span-3 my-auto mx-auto">
               <img
@@ -94,26 +94,26 @@ export default function HomePage() {
               />
             </div>
 
-            <Feature
+            <Featurette
               icon={<IoRadioOutline />}
               title={t('home:features.list.3.title')}
             >
               {t('home:features.list.3.description')}
-            </Feature>
+            </Featurette>
 
-            <Feature
+            <Featurette
               icon={<IoSparkles />}
               title={t('home:features.list.4.title')}
             >
               {t('home:features.list.4.description')}
-            </Feature>
+            </Featurette>
 
-            <Feature
+            <Featurette
               icon={<IoPeople />}
               title={t('home:features.list.5.title')}
             >
               {t('home:features.list.5.description')}
-            </Feature>
+            </Featurette>
           </div>
         </div>
       </section>
