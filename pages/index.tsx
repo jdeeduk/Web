@@ -16,6 +16,7 @@ import GooglePlay from '../components/Badges/GooglePlay';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import ContentBox from "../components/ContentBox";
+import FeatureSection from "../components/FeatureSection";
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
@@ -181,11 +182,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="albums" className="py-24">
-        <div className="m-auto container max-w-6xl">
-          <h2 className="font-bold mb-6 text-center">
-            {t('home:albums.title')}
-          </h2>
+      <FeatureSection
+        sectionId = "albums"
+        title={t('home:albums.title')}
+        description=''>
 
           <ContentBox
             left = {true}
@@ -212,18 +212,12 @@ export default function HomePage() {
           >
               <p className="my-1">{t('home:albums.sections.1.description')}</p>
           </ContentBox>
-        </div>
-      </section>
+      </FeatureSection>
 
-      <section id="desktop" className="py-24">
-        <div className={`m-auto container max-w-6xl lg:p-0 md:px-16`}>
-          <div className="text-center pb-10">
-            <h2 className="font-bold mb-4">{t('home:desktop.title')}</h2>
-
-            <p className="text-neutral-500 px-6">
-              {t('home:desktop.description')}
-            </p>
-          </div>
+      <FeatureSection
+            sectionId = "desktop"
+            title={t('home:desktop.title')}
+            description={t('home:desktop.description')}>
 
           <ContentBox
             left = {true}
@@ -248,8 +242,7 @@ export default function HomePage() {
 
             <AppStore mac />
           </ContentBox>
-        </div>
-      </section>
+      </FeatureSection>
     </>
   );
 }
