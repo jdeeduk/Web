@@ -13,7 +13,6 @@ import AppStore from '../components/Badges/AppStore';
 import Button from '../components/Button';
 import Featurette from '../components/Featurette';
 import GooglePlay from '../components/Badges/GooglePlay';
-import styles from './Home.module.css';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import ContentBox from "../components/ContentBox";
@@ -33,7 +32,7 @@ export default function HomePage() {
     <>
       <section className="pt-5 pb-24">
         <div
-          className={`flex md:flex-row flex-col justify-center text-center md:text-left items-center ${styles.sectionContainer}`}
+          className={`flex md:flex-row flex-col justify-center text-center md:text-left items-center m-auto container max-w-6xl`}
         >
           <div className="md:w-1/2 flex justify-center items-center px-2">
             <img
@@ -59,7 +58,7 @@ export default function HomePage() {
 
       <section className="pt-24 pb-40" id="features">
         <div
-          className={`flex flex-col items-center text-center md:text-left ${styles.sectionContainer} px-4`}
+          className={`flex flex-col items-center text-center md:text-left m-auto container max-w-6xl px-4`}
         >
           <h2 className="font-bold mb-10 md:mb-6">
             {t('home:features.title')}
@@ -120,7 +119,7 @@ export default function HomePage() {
 
       <section className="bg-zinc-800 py-20">
         <div
-          className={`${styles.sectionContainer} flex md:flex-row flex-col items-center text-center md:text-left`}
+          className={`m-auto container max-w-6xl flex md:flex-row flex-col items-center text-center md:text-left`}
         >
           <div className="md:w-1/2 flex items-center justify-center">
             <img
@@ -137,19 +136,19 @@ export default function HomePage() {
               <IoLockClosed color="white" size={30} />
             </h2>
 
-            <p className={styles.privacyText}>
+            <p className="my-2 text-white">
               {t('home:privacy.paragraphs.0')}
             </p>
 
-            <p className={styles.privacyText}>
+            <p className="my-2 text-white">
               {t('home:privacy.paragraphs.1')}
             </p>
 
-            <p className={styles.privacyText}>
+            <p className="my-2 text-white">
               {t('home:privacy.paragraphs.2')}
             </p>
 
-            <p className={styles.privacyText}>
+            <p className="my-2 text-white">
               {t('home:privacy.paragraphs.3')}
             </p>
           </div>
@@ -158,7 +157,7 @@ export default function HomePage() {
 
       <section className="py-24">
         <div
-          className={`${styles.sectionContainer} flex md:flex-row flex-col items-center`}
+          className={`m-auto container max-w-6xl flex md:flex-row flex-col items-center`}
         >
           <div className="md:w-1/2 text-center md:text-right my-auto px-6">
             <h3 className="text-green-700">{t('home:climate.subtitle')}</h3>
@@ -183,7 +182,7 @@ export default function HomePage() {
       </section>
 
       <section id="albums" className="py-24">
-        <div className={styles.sectionContainer}>
+        <div className="m-auto container max-w-6xl">
           <h2 className="font-bold mb-6 text-center">
             {t('home:albums.title')}
           </h2>
@@ -217,7 +216,7 @@ export default function HomePage() {
       </section>
 
       <section id="desktop" className="py-24">
-        <div className={`${styles.sectionContainer} lg:p-0 md:px-16`}>
+        <div className={`m-auto container max-w-6xl lg:p-0 md:px-16`}>
           <div className="text-center pb-10">
             <h2 className="font-bold mb-4">{t('home:desktop.title')}</h2>
 
