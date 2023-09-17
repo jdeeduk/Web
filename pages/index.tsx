@@ -24,11 +24,7 @@ export default function HomePage() {
   return (
     <>
       <section className="pt-5 pb-24">
-        <ContentBox
-          left={true}
-          imageURL="images/title.png"
-          title=""
-        >
+        <ContentBox left={true} imageURL="images/title.png" title="">
           <h1 className="font-bold mb-6">{t("home:title")}</h1>
 
           <p className="mb-6">{t("home:subtitle")}</p>
@@ -72,9 +68,7 @@ export default function HomePage() {
             </Featurette>
 
             <div className="row-span-3 my-auto mx-auto">
-              <img
-                src="images/iphone.png"
-              />
+              <img src="images/iphone.png" />
             </div>
 
             <Featurette
@@ -101,26 +95,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-zinc-800 py-20">
-        <ContentBox
-          left={true}
-          imageURL="images/groups.png"
-          title=""
-        >
-          <h3 className="text-white">{t("home:privacy.subtitle")}</h3>
+      <section className="bg-zinc-800 text-white py-20">
+        <ContentBox left={true} imageURL="images/groups.png" title="">
+          <h3 className="">{t("home:privacy.subtitle")}</h3>
 
-          <h2 className="font-bold text-white mb-2.5 flex text-[2.25rem] gap-2 items-center justify-center md:justify-start">
+          <h2 className="font-bold mb-2.5 flex text-[2.25rem] gap-2 items-center justify-center md:justify-start">
             {t("home:privacy.title")}
             <IoIcons.IoLockClosed color="white" size={30} />
           </h2>
 
-          <p className="my-2 text-white">{t("home:privacy.paragraphs.0")}</p>
+          <p className="my-2">{t("home:privacy.paragraphs.0")}</p>
 
-          <p className="my-2 text-white">{t("home:privacy.paragraphs.1")}</p>
+          <p className="my-2">{t("home:privacy.paragraphs.1")}</p>
 
-          <p className="my-2 text-white">{t("home:privacy.paragraphs.2")}</p>
+          <p className="my-2">{t("home:privacy.paragraphs.2")}</p>
 
-          <p className="my-2 text-white">{t("home:privacy.paragraphs.3")}</p>
+          <p className="my-2">{t("home:privacy.paragraphs.3")}</p>
         </ContentBox>
       </section>
 
