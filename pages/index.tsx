@@ -1,12 +1,4 @@
-import {
-  IoLockClosed,
-  IoLeaf,
-  IoImages,
-  IoStar,
-  IoRadioOutline,
-  IoPeople,
-  IoSparkles,
-} from "react-icons/io5";
+import * as IoIcons from "react-icons/io5";
 import { GetStaticPropsContext } from 'next';
 import Link from 'next/link';
 import AppStore from '../components/Badges/AppStore';
@@ -62,57 +54,57 @@ export default function HomePage() {
           className={`flex flex-col items-center text-center md:text-left m-auto container max-w-6xl px-4`}
         >
           <h2 className="font-bold mb-10 md:mb-6">
-            {t('home:features.title')}
+            {t('home:featureOverviewSection.title')}
           </h2>
 
           <div className="md:grid flex flex-col grid-rows-3 grid-cols-3 grid-flow-col gap-10 md:gap-y-4">
             <Featurette
-              icon={<IoImages />}
-              title={t('home:features.list.0.title')}
+              icon={<IoIcons.IoImages />}
+              title={t('home:featureOverviewSection.features.0.title')}
             >
-              {t('home:features.list.0.description')}
+              {t('home:featureOverviewSection.features.0.description')}
             </Featurette>
 
             <Featurette
-              icon={<IoLockClosed />}
-              title={t('home:features.list.1.title')}
+              icon={<IoIcons.IoLockClosed />}
+              title={t('home:featureOverviewSection.features.1.title')}
             >
-              {t('home:features.list.1.description')}
+              {t('home:featureOverviewSection.features.1.description')}
             </Featurette>
 
             <Featurette
-              icon={<IoStar />}
-              title={t('home:features.list.2.title')}
+              icon={<IoIcons.IoStar />}
+              title={t('home:featureOverviewSection.features.2.title')}
             >
-              {t('home:features.list.2.description')}
+              {t('home:featureOverviewSection.features.2.description')}
             </Featurette>
 
             <div className="row-span-3 my-auto mx-auto">
               <img
                 src="images/iphone.png"
-                alt={t('home:features.image-alt-text') ?? ''}
+                alt={t('home:featureOverviewSection.image-alt-text') ?? ''}
               />
             </div>
 
             <Featurette
-              icon={<IoRadioOutline />}
-              title={t('home:features.list.3.title')}
+              icon={<IoIcons.IoRadioOutline />}
+              title={t('home:featureOverviewSection.features.3.title')}
             >
-              {t('home:features.list.3.description')}
+              {t('home:featureOverviewSection.features.3.description')}
             </Featurette>
 
             <Featurette
-              icon={<IoSparkles />}
-              title={t('home:features.list.4.title')}
+              icon={<IoIcons.IoSparkles />}
+              title={t('home:featureOverviewSection.features.4.title')}
             >
-              {t('home:features.list.4.description')}
+              {t('home:featureOverviewSection.features.4.description')}
             </Featurette>
 
             <Featurette
-              icon={<IoPeople />}
-              title={t('home:features.list.5.title')}
+              icon={<IoIcons.IoPeople />}
+              title={t('home:featureOverviewSection.features.5.title')}
             >
-              {t('home:features.list.5.description')}
+              {t('home:featureOverviewSection.features.5.description')}
             </Featurette>
           </div>
         </div>
@@ -134,7 +126,7 @@ export default function HomePage() {
 
             <h2 className="font-bold text-white mb-2.5 flex text-[2.25rem] gap-2 items-center justify-center md:justify-start">
               {t('home:privacy.title')}
-              <IoLockClosed color="white" size={30} />
+              <IoIcons.IoLockClosed color="white" size={30} />
             </h2>
 
             <p className="my-2 text-white">
@@ -164,7 +156,7 @@ export default function HomePage() {
             <h3 className="text-green-700">{t('home:climate.subtitle')}</h3>
 
             <h2 className="font-bold mb-4 flex items-center gap-2 text-[2.25rem] text-green-700 justify-center md:justify-end">
-              <IoLeaf className="-scale-x-100 -z-10" size={32} />
+              <IoIcons.IoLeaf className="-scale-x-100 -z-10" size={32} />
               {t('home:climate.title')}
             </h2>
 

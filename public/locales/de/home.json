@@ -2,10 +2,10 @@
    "title": "Full-Res. Einfach. Überlegene Fotoalben",
    "subtitle": "Die beste Lösung zum Teilen von Fotos: Alben erstellen, Freunde hinzufügen, Bilder in voller Auflösung hochladen und Kommentare schreiben - schaffen Sie unvergessliche Erinnerungen!",
    "image-alt-text": "Drei Telefone mit Demoansichten der Echo Photos-Anwendung.",
-   "features": {
+   "featureOverviewSection": {
       "title": "Grenzenlose Erinnerungen",
       "image-alt-text": "Telefon mit einer Demoansicht der EchoPhotos-App.",
-      "list": [
+      "features": [
          {
             "title": "Volle Auflösung",
             "description": "Teilen Sie Ihre Fotos in voller Auflösung und in Originalqualität."

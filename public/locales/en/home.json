@@ -2,10 +2,10 @@
   "title": "Full-Res. Simple. Supreme Photo Albums",
   "subtitle": "The prime solution for sharing photos: Create albums, add friends, upload full-resolution images and write comments - make everlasting memories!",
   "image-alt-text": "Three phones with demo views of the Echo Photos application.",
-  "features": {
+  "featureOverviewSection": {
     "title": "Unlimited Memories",
     "image-alt-text": "Phone with a demo view of the EchoPhotos app.",
-    "list": [
+    "features": [
       {
         "title": "Full resolution",
         "description": "Share your photos in full resolution in their original quality."
