@@ -3,16 +3,15 @@ import { ReactNode } from 'react';
 interface ContentBoxProps {
   left: boolean;
   imageURL: string;
-  imageAltText: string;
   title: ReactNode;
   children: ReactNode;
 }
 
-export default function ContentBox({ left, imageURL, imageAltText, title, children }: ContentBoxProps) {  
+export default function ContentBox({ left, imageURL, title, children }: ContentBoxProps) {  
   return (
     left ? <div className="flex md:flex-row flex-col text-center md:text-left mb-6 md:mb-0">
       <div className="md:w-1/2 flex justify-center items-center p-6">
-        <img src={imageURL} alt={imageAltText}/>
+        <img src={imageURL}/>
       </div>
 
       <div className="md:w-1/2 my-auto p-6 flex flex-col items-center md:block">
@@ -34,7 +33,7 @@ export default function ContentBox({ left, imageURL, imageAltText, title, childr
       </div>
 
       <div className="md:w-1/2 flex justify-center items-center p-6 order-1 md:order-2">
-        <img src={imageURL} alt={imageAltText}/>
+        <img src={imageURL}/>
       </div>
     </div>
   );

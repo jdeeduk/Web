@@ -58,7 +58,6 @@ export default function HomePage() {
             <div className="row-span-3 my-auto mx-auto">
               <img
                 src="images/iphone.png"
-                alt={t('home:features.image-alt-text') ?? ''}
               />
             </div>
 
@@ -93,7 +92,6 @@ export default function HomePage() {
           <div className="md:w-1/2 flex items-center justify-center">
             <img
               src="images/groups.png"
-              alt={t('home:privacy.image-alt-text') ?? ''}
             />
           </div>
 
@@ -144,7 +142,6 @@ export default function HomePage() {
           <div className="md:w-1/2 flex justify-center items-center px-6">
             <img
               src="https://source.unsplash.com/eluzJSfkNCk/400x600"
-              alt={t('home:climate.image-alt-text') ?? ''}
             />
           </div>
         </div>

@@ -1,10 +1,8 @@
 {
   "title": "Full-Res. Simple. Supreme Photo Albums",
   "subtitle": "The prime solution for sharing photos: Create albums, add friends, upload full-resolution images and write comments - make everlasting memories!",
-  "image-alt-text": "Three phones with demo views of the Echo Photos application.",
   "featureOverviewSection": {
     "title": "Unlimited Memories",
-    "image-alt-text": "Phone with a demo view of the EchoPhotos app.",
     "features": [
       {
         "title": "Full resolution",
@@ -33,7 +31,6 @@
     ]
   },
   "privacy": {
-    "image-alt-text": "Phone with a demo view of the Groups feature.",
     "subtitle": "Say no to Tracking!",
     "title": "Premium Privacy",
     "paragraphs": [
@@ -49,15 +46,13 @@
     "paragraphs": [
       "Our servers run entirely carbon-neutral.",
       "Plus, we are committed to be completely carbon-free by 2030."
-    ],
-    "image-alt-text": "View of the mountains."
+    ]
   },
   "albums": {
     "title": "Shared Albums",
     "sections": [
       {
         "title": "Share Photos - Keep Forever",
-        "image-alt-text": "Albums in the Echo Photos app.",
         "paragraphs": [
           "With Echo Photos, you'll get fast, simple and eternal photo sharing. No subscription needed!",
           "Echo Photos is the best way to share pictures of a memorable day with your friends.",
@@ -67,8 +62,7 @@
       },
       {
         "title": "Premium Photos For Unforgettable Moments",
-        "description": "Share pictures with hundreds of guests of events like weddings, parties and other festivities. 🥳",
-        "image-alt-text": "A picture of the northern lights shared in the Echo Photos app."
+        "description": "Share pictures with hundreds of guests of events like weddings, parties and other festivities. 🥳"
       }
     ]
   },
@@ -77,13 +71,11 @@
     "description": "Use Echo Photos wherever you want! Besides the main iOS and Android apps you can also view your albums on macOS and in the browser!",
     "sections": [
       {
-        "image-alt-text": "Screenshot of the Echo Photos browser app.",
         "title": "Echo Photos In Your Browser",
         "description": "Upload and download the photos directly from your computer through the Echo Photos browser plugin.",
         "open-web-app": "Open Web App"
       },
       {
-        "image-alt-text": "Screenshot of the MacOS Echo Photos app.",
         "title": "Client For MacOS",
         "description": "Use Echo Photos through the macOS App on any Mac that uses the same iCloud account as your iOS device. Currently, log-in is only possible this way."
       }

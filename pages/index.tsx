@@ -27,7 +27,6 @@ export default function HomePage() {
         <ContentBox
           left={true}
           imageURL="images/title.png"
-          imageAltText={t("home:image-alt-text") ?? ""}
           title=""
         >
           <h1 className="font-bold mb-6">{t("home:title")}</h1>
@@ -75,7 +74,6 @@ export default function HomePage() {
             <div className="row-span-3 my-auto mx-auto">
               <img
                 src="images/iphone.png"
-                alt={t("home:featureOverviewSection.image-alt-text") ?? ""}
               />
             </div>
 
@@ -107,7 +105,6 @@ export default function HomePage() {
         <ContentBox
           left={true}
           imageURL="images/groups.png"
-          imageAltText={t("home:privacy.image-alt-text") ?? ""}
           title=""
         >
           <h3 className="text-white">{t("home:privacy.subtitle")}</h3>
@@ -131,7 +128,6 @@ export default function HomePage() {
         <ContentBox
           left={false}
           imageURL="https://source.unsplash.com/eluzJSfkNCk/400x600"
-          imageAltText={t("home:climate.image-alt-text") ?? ""}
           title=""
         >
           <div className="text-right md:text-right">
@@ -157,7 +153,6 @@ export default function HomePage() {
         <ContentBox
           left={true}
           imageURL="images/group.png"
-          imageAltText={t("home:albums.sections.0.image-alt-text") ?? ""}
           title={t("home:albums.sections.0.title")}
         >
           <p className="my-1">{t("home:albums.sections.0.paragraphs.0")}</p>
@@ -172,7 +167,6 @@ export default function HomePage() {
         <ContentBox
           left={false}
           imageURL="images/image.png"
-          imageAltText={t("home:albums.sections.1.image-alt-text") ?? ""}
           title={t("home:albums.sections.1.title")}
         >
           <p className="my-1">{t("home:albums.sections.1.description")}</p>
@@ -187,7 +181,6 @@ export default function HomePage() {
         <ContentBox
           left={true}
           imageURL="images/browser.jpg"
-          imageAltText={t("home:desktop.sections.0.image-alt-text") ?? ""}
           title={t("home:desktop.sections.0.title")}
         >
           <p className="mb-4">{t("home:desktop.sections.0.description")}</p>
@@ -200,7 +193,6 @@ export default function HomePage() {
         <ContentBox
           left={false}
           imageURL="images/macOS.jpg"
-          imageAltText={t("home:desktop.sections.1.image-alt-text") ?? ""}
           title={t("home:desktop.sections.1.title")}
         >
           <p className="mb-4">{t("home:desktop.sections.1.description")}</p>
