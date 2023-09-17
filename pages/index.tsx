@@ -24,29 +24,22 @@ export default function HomePage() {
   return (
     <>
       <section className="pt-5 pb-24">
-        <div
-          className={`flex md:flex-row flex-col justify-center text-center md:text-left items-center m-auto container max-w-6xl`}
+        <ContentBox
+          left={true}
+          imageURL="images/title.png"
+          imageAltText={t("home:image-alt-text") ?? ""}
+          title=""
         >
-          <div className="md:w-1/2 flex justify-center items-center px-2">
-            <img
-              src="images/title.png"
-              alt={t("home:image-alt-text") ?? ""}
-              width="300"
-            />
+          <h1 className="font-bold mb-6">{t("home:title")}</h1>
+
+          <p className="mb-6">{t("home:subtitle")}</p>
+
+          <div className="flex items-center justify-center md:justify-start">
+            <AppStore />
+
+            <GooglePlay />
           </div>
-
-          <div className="md:w-1/2 flex flex-col px-2 md:mt-0 mt-10">
-            <h1 className="font-bold mb-6">{t("home:title")}</h1>
-
-            <p className="mb-6">{t("home:subtitle")}</p>
-
-            <div className="flex items-center justify-center md:justify-start">
-              <AppStore />
-
-              <GooglePlay />
-            </div>
-          </div>
-        </div>
+        </ContentBox>
       </section>
 
       <section className="pt-24 pb-40" id="features">
@@ -111,40 +104,37 @@ export default function HomePage() {
       </section>
 
       <section className="bg-zinc-800 py-20">
-        <div
-          className={`m-auto container max-w-6xl flex md:flex-row flex-col items-center text-center md:text-left`}
+        <ContentBox
+          left={true}
+          imageURL="images/groups.png"
+          imageAltText={t("home:privacy.image-alt-text") ?? ""}
+          title=""
         >
-          <div className="md:w-1/2 flex items-center justify-center">
-            <img
-              src="images/groups.png"
-              alt={t("home:privacy.image-alt-text") ?? ""}
-            />
-          </div>
+          <h3 className="text-white">{t("home:privacy.subtitle")}</h3>
 
-          <div className="md:w-1/2 my-auto px-4">
-            <h3 className="text-white">{t("home:privacy.subtitle")}</h3>
+          <h2 className="font-bold text-white mb-2.5 flex text-[2.25rem] gap-2 items-center justify-center md:justify-start">
+            {t("home:privacy.title")}
+            <IoIcons.IoLockClosed color="white" size={30} />
+          </h2>
 
-            <h2 className="font-bold text-white mb-2.5 flex text-[2.25rem] gap-2 items-center justify-center md:justify-start">
-              {t("home:privacy.title")}
-              <IoIcons.IoLockClosed color="white" size={30} />
-            </h2>
+          <p className="my-2 text-white">{t("home:privacy.paragraphs.0")}</p>
 
-            <p className="my-2 text-white">{t("home:privacy.paragraphs.0")}</p>
+          <p className="my-2 text-white">{t("home:privacy.paragraphs.1")}</p>
 
-            <p className="my-2 text-white">{t("home:privacy.paragraphs.1")}</p>
+          <p className="my-2 text-white">{t("home:privacy.paragraphs.2")}</p>
 
-            <p className="my-2 text-white">{t("home:privacy.paragraphs.2")}</p>
-
-            <p className="my-2 text-white">{t("home:privacy.paragraphs.3")}</p>
-          </div>
-        </div>
+          <p className="my-2 text-white">{t("home:privacy.paragraphs.3")}</p>
+        </ContentBox>
       </section>
 
       <section className="py-24">
-        <div
-          className={`m-auto container max-w-6xl flex md:flex-row flex-col items-center`}
+        <ContentBox
+          left={false}
+          imageURL="https://source.unsplash.com/eluzJSfkNCk/400x600"
+          imageAltText={t("home:climate.image-alt-text") ?? ""}
+          title=""
         >
-          <div className="md:w-1/2 text-center md:text-right my-auto px-6">
+          <div className="text-right md:text-right">
             <h3 className="text-green-700">{t("home:climate.subtitle")}</h3>
 
             <h2 className="font-bold mb-4 flex items-center gap-2 text-[2.25rem] text-green-700 justify-center md:justify-end">
@@ -156,14 +146,7 @@ export default function HomePage() {
 
             <p className="mb-4">{t("home:climate.paragraphs.1")}</p>
           </div>
-
-          <div className="md:w-1/2 flex justify-center items-center px-6">
-            <img
-              src="https://source.unsplash.com/eluzJSfkNCk/400x600"
-              alt={t("home:climate.image-alt-text") ?? ""}
-            />
-          </div>
-        </div>
+        </ContentBox>
       </section>
 
       <FeatureSection
