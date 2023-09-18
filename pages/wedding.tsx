@@ -25,13 +25,21 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="pt-5 pb-24 bg-rose-50">
+      <section className="pt-5 pb-24 bg-rose-50 h-screen">
         <ContentBox left={true} imageURL="images/title.png" title="">
           <h1 className={`${cinzelFont.className}font-bold mb-6 `}>
             The Photo Album for your Wedding
           </h1>
 
-          <p className="mb-6">That is</p>
+          <p className="my-3">
+            Supported on iPhone, Android, Web, Mac and Apple TV
+          </p>
+
+          <div className="flex items-center justify-center md:justify-start">
+            <AppStore appendix="?ppid=018749c4-f51a-4659-874a-36ce62c57a24" />
+
+            <GooglePlay />
+          </div>
         </ContentBox>
       </section>
 
@@ -92,80 +100,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <section className="bg-zinc-800 py-20 text-white">
-        <ContentBox left={true} imageURL="images/groups.png" title="">
-          <h3>{t("home:privacy.subtitle")}</h3>
-
-          <h2 className="font-bold mb-2.5 flex text-[2.25rem] gap-2 items-center justify-center md:justify-start">
-            {t("home:privacy.title")}
-            <IoIcons.IoLockClosed color="white" size={30} />
-          </h2>
-
-          <p className="my-2">{t("home:privacy.paragraphs.0")}</p>
-
-          <p className="my-2">{t("home:privacy.paragraphs.1")}</p>
-
-          <p className="my-2">{t("home:privacy.paragraphs.2")}</p>
-
-          <p className="my-2">{t("home:privacy.paragraphs.3")}</p>
-        </ContentBox>
-      </section>
-
-      <section className="py-24">
-        <ContentBox
-          left={false}
-          imageURL="https://source.unsplash.com/eluzJSfkNCk/400x600"
-          title=""
-        >
-          <div className="text-right md:text-right">
-            <h3 className="text-green-700">{t("home:climate.subtitle")}</h3>
-
-            <h2 className="font-bold mb-4 flex items-center gap-2 text-[2.25rem] text-green-700 justify-center md:justify-end">
-              <Icons.GiLindenLeaf className="-scale-x-100 -z-10" size={32} />
-              {t("home:climate.title")}
-            </h2>
-
-            <p className="mb-1">{t("home:climate.paragraphs.0")}</p>
-
-            <p className="mb-4">{t("home:climate.paragraphs.1")}</p>
-          </div>
-        </ContentBox>
-      </section>
-
-      <FeatureSection
-        sectionId="albums"
-        title={t("home:albums.title")}
-        description=""
-      >
-        <ContentBox
-          left={true}
-          imageURL="images/group.png"
-          title={t("home:albums.sections.0.title")}
-        >
-          <p className="my-1">{t("home:albums.sections.0.paragraphs.0")}</p>
-
-          <p className="my-1">{t("home:albums.sections.0.paragraphs.1")}</p>
-
-          <p className="my-1">{t("home:albums.sections.0.paragraphs.2")}</p>
-
-          <p className="my-1">{t("home:albums.sections.0.paragraphs.3")}</p>
-        </ContentBox>
-
-        <ContentBox
-          left={false}
-          imageURL="images/image.png"
-          title="Get It Now!"
-        >
-          <p className="my-3">Supported on iPhone, Android, Web, Mac and Apple TV</p>
-
-          <div className="flex items-center justify-center md:justify-start">
-            <AppStore />
-
-            <GooglePlay />
-          </div>
-        </ContentBox>
-      </FeatureSection>
     </>
   );
 }
