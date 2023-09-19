@@ -11,6 +11,7 @@ import GooglePlay from "../components/Badges/GooglePlay";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import ContentBox from "../components/ContentBox";
+import FullScreenSection from "../components/FullScreenSection";
 
 const cinzelFont = Cinzel({ subsets: ["latin"] });
 const quickSandFont = Quicksand({ subsets: ["latin"] });
@@ -33,15 +34,15 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="pt-5 pb-1 bg-rose-50 min-h-screen">
-        <ContentBox left={true} imageURL="images/title.png" title="">
+      <FullScreenSection className="bg-rose-50">
+        <ContentBox left={false} imageURL="images/title.png" title="">
           <h1 className={`${titleFont.className} font-bold mb-6`}>
             Celebrate. Snap. Share.
           </h1>
 
           <h4 className="my-4">Where Wedding photos are meant to be shared.</h4>
 
-          <div className="mt-7 flex items-center justify-center md:justify-start">
+          <div className="mt-7 flex flex-row items-center justify-center md:justify-start">
             <AppStore appendix="?ppid=018749c4-f51a-4659-874a-36ce62c57a24" />
 
             <GooglePlay />
@@ -51,7 +52,7 @@ export default function HomePage() {
             Available on iPhone, Android, Web, Mac and Apple TV
           </p>
         </ContentBox>
-      </section>
+      </FullScreenSection>
 
       <section
         className="pt-10 pb-10 md:pt-24 md:pb-40 bg-red-300"
@@ -106,7 +107,7 @@ export default function HomePage() {
 
             <div>
               <h5 className="flex font-semibold items-center md:justify-start justify-center gap-2">
-                ☀️ Test
+                ☭ ♥︎♞♠︎☼☾⚭✚❉❆❋✻💍🤵‍♂️👰‍♀️💒☀️ Test
               </h5>
 
               <p className="font-xs">More</p>

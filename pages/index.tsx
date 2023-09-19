@@ -9,6 +9,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import ContentBox from "../components/ContentBox";
 import FeatureSection from "../components/FeatureSection";
+import FullScreenSection from "../components/FullScreenSection";
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
@@ -23,7 +24,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="pt-5 pb-24">
+      <FullScreenSection>
         <ContentBox left={true} imageURL="images/title.png" title="">
           <h1 className="font-bold mb-6">{t("home:title")}</h1>
 
@@ -35,9 +36,9 @@ export default function HomePage() {
             <GooglePlay />
           </div>
         </ContentBox>
-      </section>
+      </FullScreenSection>
 
-      <section className="pt-24 pb-40" id="features">
+      <section className="pt-24 pb-40 bg-gray-100" id="features">
         <div
           className={`flex flex-col items-center text-center md:text-left m-auto container max-w-6xl px-4`}
         >
