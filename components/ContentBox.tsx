@@ -24,7 +24,7 @@ export default function ContentBox({
         {children}
       </div>
 
-      <div className="p-6 max-w-lg ">
+      <div className="p-6 max-w-lg">
         <img src={imageURL} />
       </div>
     </div>

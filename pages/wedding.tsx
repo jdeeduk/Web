@@ -1,4 +1,4 @@
-import * as Icons from "react-icons/gi";
+import * as Icons from "react-icons/io5";
 import { GetStaticPropsContext } from "next";
 import { Cinzel } from "next/font/google";
 import { Montserrat } from "next/font/google";
@@ -37,10 +37,12 @@ export default function HomePage() {
       <FullScreenSection className="bg-rose-50">
         <ContentBox left={false} imageURL="images/title.png" title="">
           <h1 className={`${titleFont.className} font-bold mb-6`}>
-            Celebrate. Snap. Share.
+            Celebrate. Capture. Relive.
           </h1>
 
-          <h4 className="my-4">Where Wedding photos are meant to be shared.</h4>
+          <h4 className="my-4">
+            The best way to collect all photos of your big event.
+          </h4>
 
           <div className="mt-7 flex flex-row items-center justify-center md:justify-start">
             <AppStore appendix="?ppid=018749c4-f51a-4659-874a-36ce62c57a24" />
@@ -62,29 +64,37 @@ export default function HomePage() {
           className={`flex flex-col text-stone-50 items-center text-center md:text-left m-auto container max-w-6xl px-4`}
         >
           <h2 className={`${titleFont.className} font-bold mb-10 md:mb-6`}>
-            Memories are forever
+            The App
           </h2>
 
           <div className="md:grid flex flex-col grid-rows-3 grid-cols-3 grid-flow-col gap-10 md:gap-y-4">
             <Featurette
-              icon={<Icons.GiLockedHeart />}
-              title={t("home:featureOverviewSection.features.0.title")}
+              big={true}
+              titleClassName={`${titleFont.className}`}
+              icon={<Icons.IoImages />}
+              title="An album for all guests"
             >
-              {t("home:featureOverviewSection.features.0.description")}
+              Bring all your guests together in an album. Everyone has some
+              special snaps you do not want to miss!
             </Featurette>
 
             <Featurette
-              icon={<Icons.GiClover />}
-              title={t("home:featureOverviewSection.features.1.title")}
+              big={true}
+              titleClassName={`${titleFont.className}`}
+              icon={<Icons.IoSparkles />}
+              title="The best in class"
             >
-              {t("home:featureOverviewSection.features.1.description")}
+              No ads and a premium quality app makes evryone love to use it.
             </Featurette>
 
             <Featurette
-              icon={<Icons.GiLinkedRings />}
-              title={t("home:featureOverviewSection.features.2.title")}
+              big={true}
+              titleClassName={`${titleFont.className}`}
+              icon={<Icons.IoHeart />}
+              title="Relive the best moments"
             >
-              {t("home:featureOverviewSection.features.2.description")}
+              Bring back the moment by recounting best story that lead to the
+              snap in the comments. And don't forget to like your favs!
             </Featurette>
 
             <div className="row-span-3 my-auto mx-auto">
@@ -92,26 +102,42 @@ export default function HomePage() {
             </div>
 
             <Featurette
-              icon={<Icons.GiRose />}
-              title={t("home:featureOverviewSection.features.3.title")}
+              big={true}
+              titleClassName={`${titleFont.className}`}
+              icon={<Icons.IoQrCode />}
+              title="Share the QR Code"
             >
-              {t("home:featureOverviewSection.features.3.description")}
+              To get everyone on board, each album has a QR Code that guests can
+              scan to get in.
             </Featurette>
 
             <Featurette
-              icon={<Icons.GiOlive />}
-              title={t("home:featureOverviewSection.features.4.title")}
+              big={true}
+              titleClassName={`${titleFont.className}`}
+              icon={<Icons.IoCloudDownload />}
+              title="Download all photos"
             >
-              {t("home:featureOverviewSection.features.4.description")}
+              Save the photos into your phone's gallery or create a download
+              link - everyone will get the photos they want.
+            </Featurette>
+            <Featurette
+              big={true}
+              titleClassName={`${titleFont.className}`}
+              icon={<Icons.IoLink />}
+              title="Invite with a link"
+            >
+              An album invite link is all your guests need to upload their
+              photos to your event's album.
             </Featurette>
 
-            <div>
+            {/* <div>
               <h5 className="flex font-semibold items-center md:justify-start justify-center gap-2">
-                ☭ ♥︎♞♠︎☼☾⚭✚❉❆❋✻💍🤵‍♂️👰‍♀️💒☀️ Test
+                With Echo Photos, anyone with an invite link can upload their
+                photos to your event's album.☭ ♥︎♞♠︎☼☾⚭✚❉❆❋✻💍🤵‍♂️👰‍♀️💒☀️ Test
               </h5>
 
               <p className="font-xs">More</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
