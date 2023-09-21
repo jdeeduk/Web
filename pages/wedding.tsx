@@ -21,28 +21,27 @@ const playfairFont = Playfair_Display({ subsets: ["latin"] });
 
 const titleFont = playfairFont;
 
+
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "en", ["common", "home"])),
+      ...(await serverSideTranslations(locale ?? "en", ["common", "wedding"])),
     },
   };
 }
 
-export default function HomePage() {
+export default function WeddingPage() {
   const { t } = useTranslation();
 
   return (
     <>
       <FullScreenSection className="bg-rose-50">
-        <ContentBox left={false} imageURL="images/title.png" title="">
+        <ContentBox left={false} imageURL="/images/title.png" title="">
           <h1 className={`${titleFont.className} font-bold mb-6`}>
-            Celebrate. Capture. Relive.
+            {t("wedding:primarySection.title")}
           </h1>
 
-          <h4 className="my-4">
-            The best way to collect all photos of your big event.
-          </h4>
+          <h4 className="my-4">{t("wedding:primarySection.subtitle")}</h4>
 
           <div className="mt-7 flex flex-row items-center justify-center md:justify-start">
             <AppStore appendix="?ppid=018749c4-f51a-4659-874a-36ce62c57a24" />
@@ -50,9 +49,7 @@ export default function HomePage() {
             <GooglePlay />
           </div>
 
-          <p className="my-3">
-            Available on iPhone, Android, Web, Mac and Apple TV
-          </p>
+          <p className="my-3">{t("wedding:primarySection.availableOn")}</p>
         </ContentBox>
       </FullScreenSection>
 
@@ -72,72 +69,59 @@ export default function HomePage() {
               big={true}
               titleClassName={`${titleFont.className}`}
               icon={<Icons.IoImages />}
-              title="An album for all guests"
+              title={t("wedding:features.0.title")}
             >
-              Bring all your guests together in an album. Everyone has some
-              special snaps you do not want to miss!
+              {t("wedding:features.0.text")}
             </Featurette>
 
             <Featurette
               big={true}
               titleClassName={`${titleFont.className}`}
               icon={<Icons.IoSparkles />}
-              title="The best in class"
+              title={t("wedding:features.1.title")}
             >
-              No ads and a premium quality app makes evryone love to use it.
+              {t("wedding:features.1.text")}
             </Featurette>
 
             <Featurette
               big={true}
               titleClassName={`${titleFont.className}`}
               icon={<Icons.IoHeart />}
-              title="Relive the best moments"
+              title={t("wedding:features.2.title")}
             >
-              Bring back the moment by recounting best story that lead to the
-              snap in the comments. And don't forget to like your favs!
+              {t("wedding:features.2.text")}
             </Featurette>
 
             <div className="row-span-3 my-auto mx-auto">
-              <img src="images/iphone.png" />
+              <img src="/images/iphone.png" />
             </div>
 
             <Featurette
               big={true}
               titleClassName={`${titleFont.className}`}
               icon={<Icons.IoQrCode />}
-              title="Share the QR Code"
+              title={t("wedding:features.3.title")}
             >
-              To get everyone on board, each album has a QR Code that guests can
-              scan to get in.
+              {t("wedding:features.3.text")}
             </Featurette>
 
             <Featurette
               big={true}
               titleClassName={`${titleFont.className}`}
               icon={<Icons.IoCloudDownload />}
-              title="Download all photos"
+              title={t("wedding:features.4.title")}
             >
-              Save the photos into your phone's gallery or create a download
-              link - everyone will get the photos they want.
+              {t("wedding:features.4.text")}
             </Featurette>
+
             <Featurette
               big={true}
               titleClassName={`${titleFont.className}`}
               icon={<Icons.IoLink />}
-              title="Invite with a link"
+              title={t("wedding:features.5.title")}
             >
-              An album invite link is all your guests need to upload their
-              photos to your event's album.
+              {t("wedding:features.5.text")}
             </Featurette>
-
-            {/* <div>
-              <h5 className="flex font-semibold items-center md:justify-start justify-center gap-2">
-                With Echo Photos, anyone with an invite link can upload their
-                photos to your event's album.☭ ♥︎♞♠︎☼☾⚭✚❉❆❋✻💍🤵‍♂️👰‍♀️💒☀️ Test
-              </h5>
-
-              <p className="font-xs">More</p>
-            </div> */}
           </div>
         </div>
       </section>

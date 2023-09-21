@@ -25,7 +25,7 @@ export default function HomePage() {
   return (
     <>
       <FullScreenSection>
-        <ContentBox left={true} imageURL="images/title.png" title="">
+        <ContentBox left={true} imageURL="/images/title.png" title="">
           <h1 className="font-bold mb-6">{t("home:title")}</h1>
 
           <p className="mb-6">{t("home:subtitle")}</p>
@@ -69,7 +69,7 @@ export default function HomePage() {
             </Featurette>
 
             <div className="row-span-3 my-auto mx-auto">
-              <img src="images/iphone.png" />
+              <img src="/images/iphone.png" />
             </div>
 
             <Featurette
@@ -97,7 +97,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-zinc-800 text-white py-20">
-        <ContentBox left={true} imageURL="images/groups.png" title="">
+        <ContentBox left={true} imageURL="/images/groups.png" title="">
           <h3 className="">{t("home:privacy.subtitle")}</h3>
 
           <h2 className="font-bold mb-2.5 flex text-[2.25rem] gap-2 items-center justify-center md:justify-start">
@@ -143,7 +143,7 @@ export default function HomePage() {
       >
         <ContentBox
           left={true}
-          imageURL="images/group.png"
+          imageURL="/images/group.png"
           title={t("home:albums.sections.0.title")}
         >
           <p className="my-1">{t("home:albums.sections.0.paragraphs.0")}</p>
@@ -157,7 +157,7 @@ export default function HomePage() {
 
         <ContentBox
           left={false}
-          imageURL="images/image.png"
+          imageURL="/images/image.png"
           title={t("home:albums.sections.1.title")}
         >
           <p className="my-1">{t("home:albums.sections.1.description")}</p>
@@ -171,7 +171,7 @@ export default function HomePage() {
       >
         <ContentBox
           left={true}
-          imageURL="images/browser.jpg"
+          imageURL="/images/browser.jpg"
           title={t("home:desktop.sections.0.title")}
         >
           <p className="mb-4">{t("home:desktop.sections.0.description")}</p>
@@ -183,7 +183,7 @@ export default function HomePage() {
 
         <ContentBox
           left={false}
-          imageURL="images/macOS.jpg"
+          imageURL="/images/macOS.jpg"
           title={t("home:desktop.sections.1.title")}
         >
           <p className="mb-4">{t("home:desktop.sections.1.description")}</p>

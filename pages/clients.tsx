@@ -31,7 +31,7 @@ export default function HomePage() {
       >
         <ContentBox
           left={true}
-          imageURL="images/browser.jpg"
+          imageURL="/images/browser.jpg"
           title={t("home:desktop.sections.0.title")}
         >
           <p className="mb-4">{t("home:desktop.sections.0.description")}</p>
@@ -39,7 +39,7 @@ export default function HomePage() {
 
         <ContentBox
           left={false}
-          imageURL="images/macOS.jpg"
+          imageURL="/images/macOS.jpg"
           title={t("home:desktop.sections.1.title")}
         >
           <p className="mb-4">{t("home:desktop.sections.1.description")}</p>
