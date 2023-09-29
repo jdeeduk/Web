@@ -36,7 +36,7 @@ export default function WeddingPage() {
   return (
     <>
       <FullScreenSection className="bg-rose-50">
-        <ContentBox left={false} imageURL="/images/title.png" title="">
+        <ContentBox left={false} imageURL="/images/weddingMain.png" title="">
           <h1 className={`${titleFont.className} font-bold mb-6`}>
             {t("wedding:primarySection.title")}
           </h1>
@@ -93,7 +93,7 @@ export default function WeddingPage() {
             </Featurette>
 
             <div className="row-span-3 my-auto mx-auto">
-              <img src="/images/iphone.png" />
+              <img src="/images/weddingSecondary.png" />
             </div>
 
             <Featurette

@@ -7,10 +7,9 @@
   },
   "footer": {
     "home": "Home",
-    "albums": "Alben",
+    "weddingLink": "Hochzeiten",
     "webapp": "Web App",
     "instagram": "Instagram",
-    "download": "Herunterladen",
     "privacy": "Datenschutz",
     "press": "Medien",
     "copyright": {
@@ -19,5 +18,5 @@
     },
     "bottom-text": "Coded with ❤️ in 🇨🇭"
   },
-  "go-back": "Go back"
+  "go-back": "Zurück"
 }
