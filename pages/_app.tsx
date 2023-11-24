@@ -10,7 +10,10 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Echo Photos</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="apple-itunes-app" content="app-id=1499073049" />
+        <meta
+          name="apple-itunes-app"
+          content="app-id=1499073049, app-clip-bundle-id=LVS4T6PPZ4.ch.echolabs.echo.Clip, app-clip-display=card"
+        />
         <meta name="description" content="Supreme Photo sharing" />
       </Head>
       <Component {...pageProps} />
