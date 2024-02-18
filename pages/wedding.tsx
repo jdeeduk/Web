@@ -21,7 +21,6 @@ const playfairFont = Playfair_Display({ subsets: ["latin"] });
 
 const titleFont = playfairFont;
 
-
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
