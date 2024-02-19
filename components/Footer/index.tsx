@@ -20,12 +20,6 @@ export default function Footer() {
           </li>
 
           <li>
-            <Link className={styles.footerLink} href="/wedding">
-              {t("footer.weddingLink")}
-            </Link>
-          </li>
-
-          <li>
             <Link
               className={styles.footerLink}
               href="https://web.echophotos.io"
