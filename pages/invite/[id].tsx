@@ -110,7 +110,7 @@ export default function InvitePage(inviteData: InviteData) {
       </Head>
 
       <section>
-        <div className="container mx-auto max-w-6xl py-8">
+        <div className="container mx-auto max-w-6xl py-8 mt-16">
           <div id="inviteInfo" className="flex mb-20 md:flex-row flex-col">
             <div
               className="md:w-1/2 flex justify-center items-center px-5"
