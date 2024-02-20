@@ -18,7 +18,7 @@ export default () => {
 
   return (
     <header>
-      <nav className="h-20 py-3 px-4 flex items-center justify-between w-full fixed backdrop-blur-md bg-white/70">
+      <nav className="z-[100] h-20 py-3 px-4 flex items-center justify-between w-full fixed backdrop-blur-md bg-white/70">
         <Link className="nav-brand" href="/">
           <img
             src="/images/logo125.png"

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import QRCode from "react-qr-code";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GetServerSideProps } from "next";
 import admin from "firebase-admin";
 import Button from "../../components/Button";
@@ -10,10 +10,37 @@ import AppStore from "../../components/Badges/AppStore";
 import WebApp from "../../components/Badges/WebApp";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import type { NextPage } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import Bridge from "../../components/Icons/Bridge";
 
-export interface InviteData {
-  albumImagePreviewURL?: string;
-  albumName?: string;
+interface PropsData {
+  albumImagePreviewURL: string;
+  albumName: string;
+  imageIds: string[];
+  inviteId: string;
+  domain: string;
+}
+
+interface AlbumItem {
+  image: string;
+  video?: boolean;
+  contentTimeStamp: number;
+}
+
+interface Invite {
+  id: string;
+  group: string;
+  timestamp: number;
+  code?: string;
+  disabled?: boolean;
+  inviter?: string;
+  groupName?: string;
+  groupDescription?: string;
+  groupImage?: string;
+  members?: string[];
+  photoCount?: number;
 }
 
 export const getServerSideProps: GetServerSideProps = async ({
@@ -34,36 +61,59 @@ export const getServerSideProps: GetServerSideProps = async ({
   }
 
   const reqURL = `${domain}/api/v1/invites/${inviteId}`;
-
-  let propsData: InviteData = {};
+  const itemsURL = `${domain}/api/v1/invites/${inviteId}/items`;
 
   try {
-    const res = await fetch(reqURL);
-    const invite = await res.json();
+    const inviteResponse = await fetch(reqURL);
+    const itemsResponse = await fetch(itemsURL);
+    const invite: Invite = await inviteResponse.json();
+    const items: AlbumItem[] = await itemsResponse.json();
 
-    propsData.albumName = invite?.groupName;
-    propsData.albumImagePreviewURL = `${domain}/api/v1/invites/${invite.id}/image`;
+    let propsData: PropsData = {
+      albumName: invite.groupName ?? "",
+      domain: domain,
+      albumImagePreviewURL: `${domain}/api/v1/invites/${invite.id}/image`,
+      imageIds: items
+        .filter((item) => {
+          return !item.video;
+        })
+        .sort((a, bg) => { 
+          if (a.contentTimeStamp < bg.contentTimeStamp) {
+            return 1;
+          } else if (a.contentTimeStamp < bg.contentTimeStamp) {
+            return -1;
+          }
+          return 0;
+         })
+        .map((item) => {
+          return item.image;
+        }),
+      inviteId: inviteId,
+      ...(await serverSideTranslations(locale ?? "en", ["common", "invite"])),
+    };
 
     return {
-      props: {
-        albumName: propsData.albumName,
-        albumImagePreviewURL: propsData.albumImagePreviewURL,
-        ...(await serverSideTranslations(locale ?? "en", ["common", "invite"])),
-      },
+      props: propsData,
     };
   } catch (e) {
     console.error(e);
+
+    let propsData: PropsData = {
+      albumName: "New Album Invite",
+      domain: domain,
+      albumImagePreviewURL: `${domain}/images/AppIcon300.png`,
+      imageIds: [],
+      inviteId: inviteId,
+      ...(await serverSideTranslations(locale ?? "en", ["common", "invite"])),
+    };
+
     return {
-      props: {
-        albumName: "New Album Invite",
-        albumImagePreviewURL: `${domain}/images/AppIcon300.png`,
-        ...(await serverSideTranslations(locale ?? "en", ["common", "invite"])),
-      },
+      props: propsData,
     };
   }
 };
 
-export default function InvitePage(inviteData: InviteData) {
+export default function InvitePage(props: PropsData) {
   const router = useRouter();
   const fullInviteId = router.query.id as string;
   const inviteCode = fullInviteId.substring(0, 8);
@@ -83,7 +133,7 @@ export default function InvitePage(inviteData: InviteData) {
     <>
       <Head>
         <title>
-          {"Echo Photos - " + inviteData.albumName ??
+          {"Echo Photos - " + props.albumName ??
             t("invite:albumInvite") ??
             "Album Invite"}
         </title>
@@ -91,15 +141,13 @@ export default function InvitePage(inviteData: InviteData) {
         <meta
           property="og:image"
           content={
-            inviteData.albumImagePreviewURL ??
+            props.albumImagePreviewURL ??
             "https://www.echophotos.io/images/AppIcon300.png"
           }
         />
         <meta
           property="og:title"
-          content={
-            inviteData.albumName ?? t("invite:albumInvite") ?? "Album Invite"
-          }
+          content={props.albumName ?? t("invite:albumInvite") ?? "Album Invite"}
         />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Echo Photos" />
@@ -162,6 +210,67 @@ export default function InvitePage(inviteData: InviteData) {
           </div>
         </div>
       </section>
+
+      <div className="bg-black">
+        <section className="mx-auto max-w-[1960px] p-4">
+          <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
+            {/*<div className="after:content relative mb-5 flex h-[629px] flex-col items-center justify-end gap-1 overflow-hidden rounded-lg bg-white/10 px-6 pb-16 pt-64 text-center text-white shadow-highlight after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight lg:pt-0">
+              <div className="absolute inset-0 flex items-center justify-center opacity-20">
+                <span className="flex max-h-full max-w-full items-center justify-center">
+                  <Bridge />
+                </span>
+                <span className="absolute left-0 right-0 bottom-0 h-[400px] bg-gradient-to-b from-black/0 via-black to-black"></span>
+              </div>
+              <h1 className="text-2xl font-bold uppercase tracking-widest">
+                {props.albumName}
+              </h1>
+              <div
+                className="p-5 bg-white aspect-square rounded-lg scale-50"
+                id="qrcode"
+              >
+                <QRCode value={qrUrl} />
+              </div>
+              <p
+                id="inviteCode"
+                className="mb-2 font-mono text-slate-700 text-center py-2 px-5 md:mx-0 mx-auto bg-white rounded uppercase text-xl"
+              >
+                {inviteCode}
+              </p>
+              <p className="max-w-[40ch] text-white/75 sm:max-w-[32ch] text-sm">
+                {t("invite:description")}
+              </p>
+              <button
+                className="pointer z-10 mt-6 rounded-lg border border-white bg-white px-3 py-2 text-sm font-semibold text-black transition hover:bg-white/10 hover:text-white md:mt-4"
+                onClick={copyToClipboard}
+              >
+                Upload Photos
+              </button>
+            </div> */}
+            {props.imageIds.map((imageId) => (
+              <div
+                // key={imageId}
+                // href={`/?photoId=${imageId}`}
+                // as={`/p/${imageId}`}
+                // shallow
+                className="after:content group relative mb-5 block w-full after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
+              >
+                <Image
+                  alt="Next.js Conf photo"
+                  className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
+                  style={{ transform: "translate3d(0, 0, 0)" }}
+                  src={`${props.domain}/api/v1/invites/${props.inviteId}/images/${imageId}/preview`}
+                  width={720}
+                  height={480}
+                  sizes="(max-width: 640px) 100vw,
+                  (max-width: 1280px) 50vw,
+                  (max-width: 1536px) 33vw,
+                  25vw"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </>
   );
 }
