@@ -14,19 +14,16 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Bridge from "../../components/Icons/Bridge";
+import { useLastViewedPhoto } from "../../utils/useLastViewedPhoto";
+import Modal from "../../components/Modal";
+import { AlbumItem } from "../../utils/types";
 
 interface PropsData {
   albumImagePreviewURL: string;
   albumName: string;
-  imageIds: string[];
+  albumItems: AlbumItem[];
   inviteId: string;
   domain: string;
-}
-
-interface AlbumItem {
-  image: string;
-  video?: boolean;
-  contentTimeStamp: number;
 }
 
 interface Invite {
@@ -73,7 +70,7 @@ export const getServerSideProps: GetServerSideProps = async ({
       albumName: invite.groupName ?? "",
       domain: domain,
       albumImagePreviewURL: `${domain}/api/v1/invites/${invite.id}/image`,
-      imageIds: items
+      albumItems: items
         .filter((item) => {
           return !item.video;
         })
@@ -84,10 +81,7 @@ export const getServerSideProps: GetServerSideProps = async ({
             return -1;
           }
           return 0;
-         })
-        .map((item) => {
-          return item.image;
-        }),
+         }),
       inviteId: inviteId,
       ...(await serverSideTranslations(locale ?? "en", ["common", "invite"])),
     };
@@ -102,7 +96,7 @@ export const getServerSideProps: GetServerSideProps = async ({
       albumName: "New Album Invite",
       domain: domain,
       albumImagePreviewURL: `${domain}/images/AppIcon300.png`,
-      imageIds: [],
+      albumItems: [],
       inviteId: inviteId,
       ...(await serverSideTranslations(locale ?? "en", ["common", "invite"])),
     };
@@ -116,7 +110,19 @@ export const getServerSideProps: GetServerSideProps = async ({
 export default function InvitePage(props: PropsData) {
   const router = useRouter();
   const fullInviteId = router.query.id as string;
+  const imageId = router.query.imageId as string | undefined;
   const inviteCode = fullInviteId.substring(0, 8);
+  const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto();
+
+  const lastViewedPhotoRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    // This effect keeps track of the last viewed photo in the modal to keep the index page in sync when the user navigates back
+    if (lastViewedPhoto && !imageId) {
+      lastViewedPhotoRef.current.scrollIntoView({ block: "center" });
+      setLastViewedPhoto(null);
+    }
+  }, [imageId, lastViewedPhoto, setLastViewedPhoto]);
 
   const { t } = useTranslation();
 
@@ -213,6 +219,16 @@ export default function InvitePage(props: PropsData) {
 
       <div className="bg-black">
         <section className="mx-auto max-w-[1960px] p-4">
+          {imageId && (
+            <Modal
+              inviteId={props.inviteId}
+              domain={props.domain}
+              items={props.albumItems}
+              onClose={() => {
+                setLastViewedPhoto(imageId);
+              }}
+            />
+          )}
           <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4">
             {/*<div className="after:content relative mb-5 flex h-[629px] flex-col items-center justify-end gap-1 overflow-hidden rounded-lg bg-white/10 px-6 pb-16 pt-64 text-center text-white shadow-highlight after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight lg:pt-0">
               <div className="absolute inset-0 flex items-center justify-center opacity-20">
@@ -246,7 +262,7 @@ export default function InvitePage(props: PropsData) {
                 Upload Photos
               </button>
             </div> */}
-            {props.imageIds.map((imageId) => (
+            {props.albumItems.map((albumItem) => (
               <div
                 // key={imageId}
                 // href={`/?photoId=${imageId}`}
@@ -254,18 +270,26 @@ export default function InvitePage(props: PropsData) {
                 // shallow
                 className="after:content group relative mb-5 block w-full after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
               >
-                <Image
-                  alt="Next.js Conf photo"
-                  className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
-                  style={{ transform: "translate3d(0, 0, 0)" }}
-                  src={`${props.domain}/api/v1/invites/${props.inviteId}/images/${imageId}/preview`}
-                  width={720}
-                  height={480}
-                  sizes="(max-width: 640px) 100vw,
+                <Link
+                  key={albumItem.image}
+                  href={`${router.pathname}?id=${props.inviteId}&imageId=${albumItem.image}`}
+                  ref={albumItem.image === lastViewedPhoto ? lastViewedPhotoRef : null}
+                  shallow
+                  className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
+                >
+                  <Image
+                    alt="Album Image"
+                    className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
+                    style={{ transform: "translate3d(0, 0, 0)" }}
+                    src={`${props.domain}/api/v1/invites/${props.inviteId}/images/${albumItem.image}/preview`}
+                    width={720}
+                    height={480}
+                    sizes="(max-width: 640px) 100vw,
                   (max-width: 1280px) 50vw,
                   (max-width: 1536px) 33vw,
                   25vw"
-                />
+                  />
+                </Link>
               </div>
             ))}
           </div>
