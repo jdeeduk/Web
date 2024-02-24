@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 2024-02-24
 - Album preview in invite page
 - Upgrade to Next.js 14.1
 - Show modal for invite preview
