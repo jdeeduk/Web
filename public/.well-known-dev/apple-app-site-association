@@ -29,8 +29,5 @@
    },
    "webcredentials": {
       "apps": [ "LVS4T6PPZ4.io.echophotos.dev" ]
-   },
-    "appclips": {
-        "apps": ["LVS4T6PPZ4.io.echophotos.dev.Clip"]
-    }
+   }
 }

@@ -4,6 +4,7 @@
 - Album preview in invite page
 - Upgrade to Next.js 14.1
 - Show modal for invite preview
+- Remove app clip association
 
 ## 2024-02-19
 - Move wedding link to header

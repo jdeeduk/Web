@@ -29,8 +29,5 @@
    },
    "webcredentials": {
       "apps": [ "LVS4T6PPZ4.ch.echolabs.echo" ]
-   },
-    "appclips": {
-        "apps": ["LVS4T6PPZ4.ch.echolabs.echo.Clip"]
-    }
+   }
 }
