@@ -76,6 +76,7 @@ export default function SharedModal({
                   src={`${domain}/api/v1/invites/${inviteId}/images/${albumItems[index].image}/preview`}
                   width={navigation ? 1280 : 1920}
                   height={navigation ? 853 : 1280}
+                  unoptimized={true}
                   priority
                   alt="Next.js Conf image"
                   onLoad={() => setLoaded(true)}
@@ -197,6 +198,7 @@ export default function SharedModal({
                           alt="small photos on the bottom"
                           width={180}
                           height={120}
+                          unoptimized={true}
                           className={`${
                             id === index
                               ? "brightness-110 hover:brightness-110"
