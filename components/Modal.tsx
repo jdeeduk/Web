@@ -96,7 +96,6 @@ export default function Modal({
         albumItems={albumItems}
         changePhotoId={changePhotoId}
         closeModal={handleClose}
-        navigation={true}
       />
     </Dialog>
   );
