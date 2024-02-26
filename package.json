@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.4",
-    "@heroicons/react": "^2.0.13",
     "eslint-config-next": "^14.1.0",
     "firebase-admin": "^11.4.1",
     "framer-motion": "^7.6.4",
