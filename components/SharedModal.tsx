@@ -155,7 +155,7 @@ export default function SharedModal({
             <div className="fixed inset-x-0 bottom-0 z-40 overflow-hidden bg-gradient-to-b from-black/0 to-black/60">
               <motion.div
                 initial={false}
-                className="mx-auto mt-6 mb-6 flex aspect-[3/2] h-14"
+                className="mx-auto mt-6 mb-6 flex aspect-[1/1] h-14"
               >
                 <AnimatePresence initial={false}>
                   {filteredAlbumItems.map((albumItem) => {
@@ -184,15 +184,15 @@ export default function SharedModal({
                       >
                         <Image
                           alt="small photos on the bottom"
-                          width={180}
-                          height={120}
+                          width={200}
+                          height={200}
                           unoptimized={true}
                           className={`${
                             id === index
                               ? "brightness-110 hover:brightness-110"
                               : "brightness-50 contrast-125 hover:brightness-75"
                           } h-full transform object-cover transition`}
-                          src={`${domain}/api/v1/invites/${inviteId}/images/${albumItem.image}/preview`}
+                          src={`${domain}/api/v1/invites/${inviteId}/images/${albumItem.image}/thumbnail-squared`}
                         />
                       </motion.button>
                     );
